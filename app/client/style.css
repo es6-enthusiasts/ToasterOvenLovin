@@ -5,6 +5,11 @@
 :root {
   --matr-navbar-bg: #ECECEC;
   --matr-navbar-bg-rgb: 236, 236, 236;
+  --color1: #BBBF4E;
+  --color2: #F2F2F2;
+  --color3: #F2BC57;
+  --color4: #F2AF5C;
+  --color5: #734D2C;
 }
 
 /* Change bootstrap variable values.
@@ -37,11 +42,11 @@ body {
   background-repeat: repeat-y;
 
 }
-.color1 {background-color: #BBBF4E;}
-.color2 { background-color: #F2F2F2;}
-.color3 {background-color: #F2BC57;}
-.color4 {background-color: #F2AF5C;}
-.color5 {background-color: #734D2C;}
+.color1 {background-color: var(--color1);}
+.color2 { background-color: var(--color2);}
+.color3 {background-color: var(--color3);}
+.color4 {background-color: var(--color4);}
+.color5 {background-color: var(--color5);}
 #Login
 {
 
@@ -69,17 +74,23 @@ code {
 }
 li.nav-item.nav-link
 {
-  color: #734D2C;
+  color: var(--color4);
   font-size: 2em;
 
 }
-a.nav-link {
-  padding-right: 2em;
-}
 a.nav-link
 {
-  color: #734D2C;
+  color: var(--color4);
   font-size: 2em;
+  padding-right: 2em;
+}
+a.nav-link:hover
+{
+  background-color: var(--color5);
+}
+a.nav-link:active
+{
+  background-color: var(--color5);
 }
 .content
 {
