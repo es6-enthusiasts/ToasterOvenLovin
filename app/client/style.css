@@ -32,7 +32,7 @@ body {
   font-family: Georgia, Serif, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/images/background.jpg');
+  background-image: url('/images/background.png');
   background-size: cover;
   background-repeat: repeat-y;
 
