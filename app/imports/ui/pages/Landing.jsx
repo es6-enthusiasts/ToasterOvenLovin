@@ -4,7 +4,7 @@ import Banner from '../components/Banner';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
+  <Container id="landing-page" fluid className="py-0">
     <Banner />
     <Row className="align-middle text-center">
       <Col xs={4}>
