@@ -10,6 +10,8 @@
   --color3: #F2BC57;
   --color4: #F2AF5C;
   --color5: #734D2C;
+  --color5lt: #956F4E;
+  --color5dk: #512b0a;
 }
 
 /* Change bootstrap variable values.
@@ -90,13 +92,14 @@ a.nav-link
 }
 a.nav-link:hover
 {
-  background-color: var(--color5);
+  background-color: var(--color5dk);
 }
 a.nav-link:active
 {
-  background-color: var(--color5);
+  background-color: var(--color5lt);
 }
 .content
 {
   font-family: "Arial Rounded MT Bold", sans-serif;
+  border-radius: 15px;
 }
