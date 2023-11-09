@@ -18,6 +18,10 @@
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
+.vertical-center
+{
+  margin-top: 15%;
+}
 
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
