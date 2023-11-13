@@ -18,7 +18,8 @@ const TopMenu = () => {
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#recipes">Recipes</Nav.Link>
-          <Nav.Link href="#recipes">Nutrition Tips</Nav.Link>
+          <Nav.Link href="#vendors">Vendors</Nav.Link>
+          <Nav.Link href="#community">Community</Nav.Link>
           <Nav.Link href="#categories">Categories</Nav.Link>
         </Nav>
         <Nav className="justify-content-end">
