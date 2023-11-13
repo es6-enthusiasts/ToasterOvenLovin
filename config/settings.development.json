@@ -9,5 +9,11 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+  "defaultRecipes": [
+    {"recipeID":, 	"ownerId":,	"dishName":, "description":,	"image":,	"ingredients": ["ingredient1","ingredient2" ],
+      "equipment":["equipment1","equipment2" ],	"instructions":,	"dietaryRestriction":,
+      "costPerServing":,	"noServings":,	"timeToMake":, },
   ]
+}
 }
