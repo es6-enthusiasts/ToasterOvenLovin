@@ -6,10 +6,23 @@ const RecipeGrid = () => (
   <Container className="py-3">
     <Row className="justify-content-center">
       <Col md={3} xs={12}>
-        <RecipeCard title="Carrot Cake" description="Moist and Fluffy Easy to bake Carrot Cake" ingredients={['Carrots', 'Cake']} instructions="Add Carrots To Cake and bake" image="https://ca-times.brightspotcdn.com/dims4/default/292423f/2147483647/strip/true/crop/600x400+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F18%2F28%2F3f155fdb7e3b0aa695f54a5b0e79%2Fla-fo-carrotcake-lm7ce8nc" />
+        <RecipeCard
+          title="Carrot Cake"
+          description="Moist and Fluffy Easy to bake Carrot Cake"
+          ingredients={['Carrots', 'Cake']}
+          instructions="Add Carrots To Cake and bake"
+          image="https://ca-times.brightspotcdn.com/dims4/default/292423f/2147483647/strip/true/crop/600x400+0+0/resize/1200x800!/
+          quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F18%2F28%2F3f155fdb7e3b0aa695f54a5b0e79%2Fla-fo-carrotcake-lm7ce8nc"
+        />
       </Col>
       <Col md={3} xs={12}>
-        <RecipeCard title="Mac and Cheese" description="Super Cheesy Mac and Cheese" ingredients={['Mac', 'Cheese']} instructions="Add Mac To cheese and stir" image="https://images-gmi-pmc.edge-generalmills.com/dc7930c0-8760-4997-9bac-21fa2f1e49f6.jpg" />
+        <RecipeCard
+          title="Mac and Cheese"
+          description="Super Cheesy Mac and Cheese"
+          ingredients={['Mac', 'Cheese']}
+          instructions="Add Mac To cheese and stir"
+          image="https://images-gmi-pmc.edge-generalmills.com/dc7930c0-8760-4997-9bac-21fa2f1e49f6.jpg"
+        />
       </Col>
       <Col md={3} xs={12}>
         <RecipeCard
