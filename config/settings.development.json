@@ -13,7 +13,7 @@
   "defaultRecipes": [
     {
       "recipeID": 1,
-      "ownerId": "ownerId1",
+      "ownerId": "",
       "dishName": "Spaghetti Carbonara",
       "description": "Spaghetti Carbonara",
       "image": "spaghetti_image.jpg",
