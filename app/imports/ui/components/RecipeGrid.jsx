@@ -11,8 +11,8 @@ const RecipeGrid = () => (
           description="Moist and Fluffy Easy to bake Carrot Cake"
           ingredients={['Carrots', 'Cake']}
           instructions="Add Carrots To Cake and bake"
-          image="https://ca-times.brightspotcdn.com/dims4/default/292423f/2147483647/strip/true/crop/600x400+0+0/resize/1200x800!/
-          quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F18%2F28%2F3f155fdb7e3b0aa695f54a5b0e79%2Fla-fo-carrotcake-lm7ce8nc"
+          /* eslint-disable-next-line max-len */
+          image="https://ca-times.brightspotcdn.com/dims4/default/292423f/2147483647/strip/true/crop/600x400+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F18%2F28%2F3f155fdb7e3b0aa695f54a5b0e79%2Fla-fo-carrotcake-lm7ce8nc"
         />
       </Col>
       <Col md={3} xs={12}>
