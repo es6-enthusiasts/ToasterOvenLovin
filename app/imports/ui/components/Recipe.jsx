@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe }) => (
       </ul>
 
       <Card.Title>Instructions</Card.Title>
-      <Card.Text>{recipe.instructions}</Card.Text>
+      <Card.Text>{recipe.dishName}</Card.Text>
 
       <Button variant="primary">View Recipe</Button>
     </Card.Body>

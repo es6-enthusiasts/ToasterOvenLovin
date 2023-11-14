@@ -11,9 +11,20 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
   "defaultRecipes": [
-    {"recipeID":, 	"ownerId":,	"dishName":, "description":,	"image":,	"ingredients": ["ingredient1","ingredient2" ],
-      "equipment":["equipment1","equipment2" ],	"instructions":,	"dietaryRestriction":,
-      "costPerServing":,	"noServings":,	"timeToMake":, },
+    {
+      "recipeID": 1,
+      "ownerId": "ownerId1",
+      "dishName": "Spaghetti Carbonara",
+      "description": "Spaghetti Carbonara",
+      "image": "spaghetti_image.jpg",
+      "ingredients": ["spaghetti", "eggs", "bacon", "cheese"],
+      "equipment": ["pot", "pan", "whisk"],
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 5,
+      "noServings": 4,
+      "timeToMake": 30
+    }
   ]
 }
-}
+
