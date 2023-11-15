@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Recipes } from '../../api/recipe/Recipes';
 import LoadingSpinner from './LoadingSpinner';
-import Recipe from './Recipe';
+import RecipeCard from './Recipe';
 
 const RecipeGrid = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -28,7 +28,7 @@ const RecipeGrid = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        {recipes.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
+        {recipes.map((recipe) => (<Col key={recipe._id}><RecipeCard recipe={recipe} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
