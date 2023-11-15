@@ -12,8 +12,7 @@ class RecipesCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      recipeID: SimpleSchema.Integer,
-      ownerId: String,
+      owner: String,
       dishName: String,
       image: String,
       ingredients: Array,
@@ -32,7 +31,9 @@ class RecipesCollection {
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
+    // we have added a publication for everyone to see.
     this.userPublicationName = `${this.name}.publication.user`;
+    this.generalPublicationName = `${this.name}.publication.general`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }

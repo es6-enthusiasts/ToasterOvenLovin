@@ -25,7 +25,7 @@ const RecipeCard = ({ recipe }) => (
 );
 RecipeCard.propTypes = {
   recipe: PropTypes.shape({
-    ownerId: PropTypes.string,
+    owner: PropTypes.string,
     dishName: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
@@ -36,6 +36,7 @@ RecipeCard.propTypes = {
     costPerServing: PropTypes.number,
     noServings: PropTypes.number,
     timeToMake: PropTypes.number,
+    _id: PropTypes.string,
   }).isRequired,
 };
 export default RecipeCard;
