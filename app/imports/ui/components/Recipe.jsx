@@ -25,18 +25,17 @@ const RecipeCard = ({ recipe }) => (
 );
 RecipeCard.propTypes = {
   recipe: PropTypes.shape({
-    recipeID: PropTypes.number.isRequired,
-    ownerId: PropTypes.string.isRequired,
-    dishName: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-    equipment: PropTypes.arrayOf(PropTypes.string).isRequired,
-    instructions: PropTypes.string.isRequired,
+    ownerId: PropTypes.string,
+    dishName: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    ingredients: PropTypes.arrayOf(PropTypes.string),
+    equipment: PropTypes.arrayOf(PropTypes.string),
+    instructions: PropTypes.string,
     dietaryRestriction: PropTypes.string,
-    costPerServing: PropTypes.number.isRequired,
-    noServings: PropTypes.number.isRequired,
-    timeToMake: PropTypes.number.isRequired,
+    costPerServing: PropTypes.number,
+    noServings: PropTypes.number,
+    timeToMake: PropTypes.number,
   }).isRequired,
 };
 export default RecipeCard;
