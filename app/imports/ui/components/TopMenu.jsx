@@ -14,7 +14,7 @@ const TopMenu = () => {
   return (
     <Navbar className="color5" expand="sm">
       <Container>
-        <Navbar.Brand href="#home"><strong>College Cuisine Connection</strong></Navbar.Brand>
+        <Navbar.Brand href="/landing"><strong>College Cuisine Connection</strong></Navbar.Brand>
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/landing">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
