@@ -12,7 +12,6 @@
   ],
   "defaultRecipes": [
     {
-      "recipeID": 1,
       "ownerId": "john@foo.com",
       "dishName": "Spaghetti Carbonara",
       "description": "Spaghetti Carbonara",
