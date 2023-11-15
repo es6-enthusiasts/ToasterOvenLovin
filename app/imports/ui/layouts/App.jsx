@@ -19,6 +19,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import TopMenu from '../components/TopMenu';
 import ListIngredients from '../pages/ListIngredients';
 import ListVendors from '../pages/ListVendors';
+import Community from '../pages/Community';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -41,6 +42,8 @@ const App = () => {
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/listIngredients" element={<ProtectedRoute><ListIngredients /></ProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
+          <Route path="/listRecipes" element={<ListRecipes />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
