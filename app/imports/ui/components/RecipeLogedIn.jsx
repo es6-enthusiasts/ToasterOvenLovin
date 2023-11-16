@@ -19,6 +19,10 @@ const RecipeCard = ({ recipe }) => (
 
       <Card.Title>Instructions</Card.Title>
       <Card.Text>{recipe.dishName}</Card.Text>
+
+      <Link to={`/edit/${recipe._id}`}>
+        <Button variant="primary">Edit</Button>
+      </Link>
     </Card.Body>
   </Card>
 );
