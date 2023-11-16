@@ -20,6 +20,7 @@ import TopMenu from '../components/TopMenu';
 import ListIngredients from '../pages/ListIngredients';
 import ListVendors from '../pages/ListVendors';
 import Community from '../pages/Community';
+import ListRecipes from '../pages/ListRecipes';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {

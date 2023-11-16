@@ -16,7 +16,7 @@ const TopMenu = () => {
       <Container>
         <Navbar.Brand href="/landing"><strong>College Cuisine Connection</strong></Navbar.Brand>
         <Nav className="mx-auto pt-auto">
-          <Nav.Link href="/landing">Home</Nav.Link>
+          <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
           <Nav.Link href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
