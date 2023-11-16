@@ -9,5 +9,21 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+  "defaultRecipes": [
+    {
+      "owner": "john@foo.com",
+      "dishName": "Spaghetti Carbonara",
+      "description": "Spaghetti Carbonara",
+      "image": "spaghetti_image.jpg",
+      "ingredients": ["spaghetti", "eggs", "bacon", "cheese"],
+      "equipment": ["pot", "pan", "whisk"],
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 5,
+      "noServings": 4,
+      "timeToMake": 30
+    }
   ]
 }
+
