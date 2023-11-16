@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const RecipeCard = ({ recipe }) => (
@@ -19,10 +20,13 @@ const RecipeCard = ({ recipe }) => (
       <Card.Title>Instructions</Card.Title>
       <Card.Text>{recipe.dishName}</Card.Text>
 
-      <Button variant="primary">View Recipe</Button>
+      <Link to={`/edit/${recipe._id}`}>
+        <Button variant="primary">Edit</Button>
+      </Link>
     </Card.Body>
   </Card>
 );
+
 RecipeCard.propTypes = {
   recipe: PropTypes.shape({
     owner: PropTypes.string,
@@ -39,4 +43,5 @@ RecipeCard.propTypes = {
     _id: PropTypes.string,
   }).isRequired,
 };
+
 export default RecipeCard;

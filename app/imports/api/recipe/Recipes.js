@@ -14,6 +14,7 @@ class RecipesCollection {
     this.schema = new SimpleSchema({
       owner: String,
       dishName: String,
+      description: String,
       image: String,
       ingredients: Array,
       'ingredients.$': String,
