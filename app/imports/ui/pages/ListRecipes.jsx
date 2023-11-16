@@ -13,7 +13,7 @@ const ListRecipes = () => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Recipe documents.
-    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    const subscription = Meteor.subscribe(Recipes.generalPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Recipe documents

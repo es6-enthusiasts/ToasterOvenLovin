@@ -33,12 +33,15 @@ class RecipesCollection {
     // Define names for publications and subscriptions
     // we have added a publication for everyone to see.
     this.userPublicationName = `${this.name}.publication.user`;
-    this.generalPublicationName = `${this.name}.publication.general`;
     this.adminPublicationName = `${this.name}.publication.admin`;
+    this.generalPublicationName = `${this.name}.publication.general`;
   }
 }
 /**
  * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
+ * @type {RecipesCollection}
+ * @param {generalPublicationName}
+ * @param {userPublicationName}
+ * @param {adminPublicationName}
  */
 export const Recipes = new RecipesCollection();

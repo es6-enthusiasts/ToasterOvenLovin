@@ -31,7 +31,7 @@ Meteor.publish(null, function () {
 });
 // General publication. publish everything for everyone to see.
 Meteor.publish(Recipes.generalPublicationName, function () {
-  if (this.userId) {
+  if (this.userId == null) {
     return Recipes.collection.find();
   }
   return this.ready();
