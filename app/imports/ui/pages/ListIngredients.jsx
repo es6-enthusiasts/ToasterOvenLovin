@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Stuffs } from '../../api/stuff/Stuff';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Ingredient from '../components/ingredient';
+import Ingredient from '../components/Ingredient';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListIngredients = () => {
