@@ -27,8 +27,8 @@ const RecipeGrid = () => {
 
   return (ready ? (
     <Container className="py-3">
-      <Row className="justify-content-center">
-        {recipes.map((recipe) => (<Col key={recipe._id}><RecipeCard recipe={recipe} /></Col>))}
+      <Row>
+        {recipes.map((recipe) => (<Col key={recipe._id} xs={12} md={4}><RecipeCard recipe={recipe} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);
