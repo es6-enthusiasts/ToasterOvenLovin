@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
@@ -14,13 +14,14 @@ const TopMenu = () => {
   return (
     <Navbar className="color5" expand="sm">
       <Container>
-        <Navbar.Brand href="#home"><strong>College Cuisine Connection</strong></Navbar.Brand>
+        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
         <Nav className="mx-auto pt-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#recipes">Recipes</Nav.Link>
-          <Nav.Link href="#vendors">Vendors</Nav.Link>
-          <Nav.Link href="#community">Community</Nav.Link>
-          <Nav.Link href="#categories">Categories</Nav.Link>
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+
         </Nav>
         <Nav className="justify-content-end">
           {currentUser === '' ? (
