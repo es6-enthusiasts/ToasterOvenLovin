@@ -103,3 +103,8 @@ a.nav-link:active
   font-family: "Arial Rounded MT Bold", sans-serif;
   border-radius: 15px;
 }
+.bannerLogo
+{
+  border-radius: 25%;
+  max-height: 5em;
+}
