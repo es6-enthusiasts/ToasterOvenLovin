@@ -6,12 +6,16 @@ import { Recipes } from '../../api/recipe/Recipes';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
+// Meteor.publish(Vendors.userPublicationName, function () {
+//   if (this.userId) {
+//     const username = Meteor.users.findOne(this.userId).username;
+//     return Vendors.collection.find({ owner: username });
+//   }
+//   return this.ready();
+// });
+
 Meteor.publish(Vendors.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Vendors.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Vendors.collection.find();
 });
 
 // Admin-level publication.
