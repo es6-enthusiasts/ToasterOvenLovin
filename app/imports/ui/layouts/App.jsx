@@ -17,6 +17,8 @@ import ListIngredients from '../pages/ListIngredients';
 import ListVendors from '../pages/ListVendors';
 import Community from '../pages/Community';
 import ListRecipes from '../pages/ListRecipes';
+import Cookbook from '../pages/Cookbook';
+import EditRecipe from '../pages/EditRecipe';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -40,7 +42,9 @@ const App = () => {
           <Route path="/listIngredients" element={<ProtectedRoute><ListIngredients /></ProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
+          <Route path="/edit/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
           <Route path="/community" element={<Community />} />
+          <Route path="/cookbook" element={<ProtectedRoute><Cookbook /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
