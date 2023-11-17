@@ -53,6 +53,9 @@ body {
 .color3 {background-color: var(--color3);}
 .color4 {background-color: var(--color4);}
 .color5 {background-color: var(--color5);}
+.accent1{background-color: #DC1E0B;}
+.accent2{background-color: #97BE11;}
+.accent3{background-color:  #28590C;}
 #Login
 {
 
@@ -102,4 +105,8 @@ a.nav-link:active
 {
   font-family: "Arial Rounded MT Bold", sans-serif;
   border-radius: 15px;
+}
+.blurbImg
+{
+  border-radius: 100%;
 }
