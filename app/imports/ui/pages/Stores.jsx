@@ -29,9 +29,10 @@ const Stores = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col>
-          <Col className="text-center">
-            <h2>List Vendors</h2>
+          <Col className="text-center  bg-white p-3 rounded">
+            <h2>Your Vendors</h2>
           </Col>
+          <br />
           <Row xs={1} md={2} lg={3} className="g-4">
             {vendors.map((vendor) => (<Col key={vendor._id}><VendorWithEdit vendor={vendor} /></Col>))}
           </Row>
