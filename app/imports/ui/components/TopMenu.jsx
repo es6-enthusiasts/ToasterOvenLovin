@@ -4,8 +4,9 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Roles } from 'meteor/alanning:roles';
 
-const navContent = function (User, role) {
+const navContent = function (User) {
   let retVal;
   if (User === '') {
     retVal = (
@@ -17,7 +18,7 @@ const navContent = function (User, role) {
       </Nav>
     );
   } else {
-    if (role === 'Admin') {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
       retVal = (
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
@@ -27,7 +28,7 @@ const navContent = function (User, role) {
           <Nav.Link href="/community">Community</Nav.Link>
         </Nav>
       );
-    } if (role === 'Vendor') {
+    } if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
       retVal = (
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
@@ -56,16 +57,15 @@ const navContent = function (User, role) {
 // Use navContent in your component
 const TopMenu = () => {
 
-  const { currentUser, role } = useTracker(() => ({
+  const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
-    role: 'Admin',
   }), []);
 
   return (
     <Navbar className="color5" expand="sm">
       <Container>
         <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
-        {navContent(currentUser, role)}
+        {navContent(currentUser)}
         <Nav className="justify-content-end">
           {currentUser === '' ? (
             <NavDropdown id="login-dropdown" title="Login">
