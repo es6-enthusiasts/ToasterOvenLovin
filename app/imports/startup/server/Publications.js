@@ -13,12 +13,22 @@ import { Recipes } from '../../api/recipe/Recipes';
 //   return this.ready();
 // });
 
-Meteor.publish(Vendors.userPublicationName, function () {
+// General publication. publish all the vendors for everyone to see.
+Meteor.publish(Vendors.generalPublicationName, function () {
   return Vendors.collection.find();
 });
 
+// User level publication for vendors. Only see the vendors that the user owns.
+Meteor.publish(Vendors.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Vendors.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
-// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
+// If logged in and with admin role, then publish all vendors from all users. Otherwise, publish nothing.
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Vendors.collection.find();
