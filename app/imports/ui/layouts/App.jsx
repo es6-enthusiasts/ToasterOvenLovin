@@ -19,6 +19,7 @@ import ListRecipes from '../pages/ListRecipes';
 import Cookbook from '../pages/Cookbook';
 import EditRecipe from '../pages/EditRecipe';
 import Stores from '../pages/Stores';
+import StoresAdmin from '../pages/StoresAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/Stores" element={<ProtectedRoute><Stores /></ProtectedRoute>} />
+          <Route path="/StoresAdmin" element={<AdminProtectedRoute ready={ready}><StoresAdmin /></AdminProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
