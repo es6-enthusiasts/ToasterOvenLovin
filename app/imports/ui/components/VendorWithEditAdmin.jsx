@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Row, Col, Card, Image, Button } from 'react-bootstrap';
 
 /** Renders a single card for a vendor with an edit button at the bottom
  *  Card will have the store image, name, horus, and location as the header,
- *  in the body the ingredients will be listen in two columns */
-const Vendor = ({ vendor }) => (
+ *  in the body the ingredients will be listen in two columns,
+ *  there will be an edit button at the bottom along with a note on who
+ *  the owner is */
+const VendorWithEditAdmin = ({ vendor }) => (
   <Card className="h-100">
     <Card.Header className="d-flex flex-column align-items-center">
       <Image src={vendor.image} width={150} />
@@ -36,12 +39,19 @@ const Vendor = ({ vendor }) => (
           </Card.Text>
         </Col>
       </Row>
+      <br />
+      <footer className="blockquote-footer">{vendor.owner}</footer>
+      <div className="d-flex justify-content-center mt-3">
+        <Button variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
+          Edit
+        </Button>
+      </div>
     </Card.Body>
   </Card>
 );
 
 // Require a document to be passed to this component.
-Vendor.propTypes = {
+VendorWithEditAdmin.propTypes = {
   vendor: PropTypes.shape({
     storeName: PropTypes.string,
     image: PropTypes.string,
@@ -53,4 +63,4 @@ Vendor.propTypes = {
   }).isRequired,
 };
 
-export default Vendor;
+export default VendorWithEditAdmin;
