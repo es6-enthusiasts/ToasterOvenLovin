@@ -13,10 +13,14 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import TopMenu from '../components/TopMenu';
-import ListIngredients from '../pages/ListIngredients';
 import ListVendors from '../pages/ListVendors';
 import Community from '../pages/Community';
 import ListRecipes from '../pages/ListRecipes';
+import Cookbook from '../pages/Cookbook';
+import EditRecipe from '../pages/EditRecipe';
+import Stores from '../pages/Stores';
+import StoresAdmin from '../pages/StoresAdmin';
+import EditStore from '../pages/EditStore';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -37,10 +41,14 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<Landing />} />
-          <Route path="/listIngredients" element={<ProtectedRoute><ListIngredients /></ProtectedRoute>} />
+          <Route path="/Stores" element={<ProtectedRoute><Stores /></ProtectedRoute>} />
+          <Route path="/StoresAdmin" element={<AdminProtectedRoute ready={ready}><StoresAdmin /></AdminProtectedRoute>} />
+          <Route path="/editVendor/:_id" element={<ProtectedRoute><EditStore /></ProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
+          <Route path="/edit/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
           <Route path="/community" element={<Community />} />
+          <Route path="/cookbook" element={<ProtectedRoute><Cookbook /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

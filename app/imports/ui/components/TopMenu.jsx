@@ -8,9 +8,6 @@ import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons
 
 const navContent = function (User) {
   let retVal;
-  console.log(`the user is ${User}`);
-  console.log(`is the user an admin ${Roles.userIsInRole(Meteor.userId(), 'admin')}`);
-  console.log(`is the user a vendor ${Roles.userIsInRole(Meteor.userId(), 'vendor')}`);
   if (User === '') {
     retVal = (
       <Nav className="mx-auto pt-auto">
@@ -20,42 +17,43 @@ const navContent = function (User) {
         <Nav.Link href="/community">Community</Nav.Link>
       </Nav>
     );
-  } else if (Roles.userIsInRole(Meteor.userId(), 'admin') === true) {
-    retVal = (
-      <Nav className="mx-auto pt-auto">
-        <Nav.Link href="/home">Admin Home</Nav.Link>
-        <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-        <Nav.Link href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-        <Nav.Link href="/community">Community</Nav.Link>
-      </Nav>
-    );
-  } else if (Roles.userIsInRole(Meteor.userId(), 'vendor') === true) {
-    retVal = (
-      <Nav className="mx-auto pt-auto">
-        <Nav.Link href="/home">VendorHome</Nav.Link>
-        <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-        <Nav.Link href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-        <Nav.Link href="/community">Community</Nav.Link>
-      </Nav>
-    );
   } else {
-    retVal = (
-      <Nav className="mx-auto pt-auto">
-        <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-        <Nav.Link href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/listVendors">MyCookbook</Nav.Link>
-        <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-        <Nav.Link href="/community">Community</Nav.Link>
-      </Nav>
-    );
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    }
+    if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    } else {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listVendors">MyCookbook</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    }
   }
   return retVal;
-
 };
-
 const TopMenu = () => {
 
   const { currentUser } = useTracker(() => ({
