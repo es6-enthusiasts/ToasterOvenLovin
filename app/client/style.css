@@ -111,4 +111,5 @@ a.nav-link:active
 .circle
 {
   border-radius: 100%;
+  aspect-ratio: 1/1;
 }

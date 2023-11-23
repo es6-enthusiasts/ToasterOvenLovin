@@ -1,13 +1,15 @@
 import React from 'react';
-import { Card, Image } from 'react-bootstrap';
+import { Card, Image, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const AccountCard = ({ account }) => (
   <Card className="h-100">
     <Card.Header>
-      <Image src={account.image} width={75} />
-      <Card.Title>{account.firstName}{account.lastName}</Card.Title>
-      <Card.Subtitle>{account.address}</Card.Subtitle>
+      <Row className="justify-content-center">
+        <Image src={account.image} width={75} className="circle" />
+        <Card.Title>{account.firstName}{account.lastName}</Card.Title>
+        <Card.Subtitle>{account.address}</Card.Subtitle>
+      </Row>
     </Card.Header>
     <Card.Body>
       <Card.Text>{account.description}</Card.Text>
