@@ -11,11 +11,6 @@ const AccountCard = ({ account }) => (
       <Card.Text>{account.description}</Card.Text>
 
       <Card.Title>Ingredients</Card.Title>
-      <ul>
-        {account.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
       <Card.Title>Instructions</Card.Title>
       <Card.Text>{account.dishName}</Card.Text>
 
