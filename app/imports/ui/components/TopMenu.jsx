@@ -1,10 +1,59 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
+const navContent = function (User) {
+  let retVal;
+  if (User === '') {
+    retVal = (
+      <Nav className="mx-auto pt-auto">
+        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link href="/community">Community</Nav.Link>
+      </Nav>
+    );
+  } else {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    }
+    if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    } else {
+      retVal = (
+        <Nav className="mx-auto pt-auto">
+          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link href="/listVendors">MyCookbook</Nav.Link>
+          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
+          <Nav.Link href="/community">Community</Nav.Link>
+        </Nav>
+      );
+    }
+  }
+  return retVal;
+};
 const TopMenu = () => {
 
   const { currentUser } = useTracker(() => ({
@@ -15,14 +64,7 @@ const TopMenu = () => {
     <Navbar className="color5" expand="sm">
       <Container>
         <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
-        <Nav className="mx-auto pt-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link href="/community">Community</Nav.Link>
-
-        </Nav>
+        {navContent(currentUser)}
         <Nav className="justify-content-end">
           {currentUser === '' ? (
             <NavDropdown id="login-dropdown" title="Login">

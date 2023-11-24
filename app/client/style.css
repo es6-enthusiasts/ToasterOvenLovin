@@ -120,3 +120,8 @@ a.nav-link:active
   border-radius: 25%;
   max-height: 5em;
 }
+.circle
+{
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}

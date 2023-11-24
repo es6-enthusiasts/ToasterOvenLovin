@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendors/Vendors';
 import { Recipes } from '../../api/recipe/Recipes';
+import { Profiles } from '../../api/profiles/Profiles';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -13,12 +14,22 @@ import { Recipes } from '../../api/recipe/Recipes';
 //   return this.ready();
 // });
 
-Meteor.publish(Vendors.userPublicationName, function () {
+// General publication. publish all the vendors for everyone to see.
+Meteor.publish(Vendors.generalPublicationName, function () {
   return Vendors.collection.find();
 });
 
+// User level publication for vendors. Only see the vendors that the user owns.
+Meteor.publish(Vendors.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Vendors.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
-// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
+// If logged in and with admin role, then publish all vendors from all users. Otherwise, publish nothing.
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Vendors.collection.find();
@@ -36,10 +47,7 @@ Meteor.publish(null, function () {
 });
 // General publication. publish everything for everyone to see.
 Meteor.publish(Recipes.generalPublicationName, function () {
-  if (this.userId == null) {
-    return Recipes.collection.find();
-  }
-  return this.ready();
+  return Recipes.collection.find();
 });
 
 // User-level publication.
@@ -57,6 +65,15 @@ Meteor.publish(Recipes.userPublicationName, function () {
 Meteor.publish(Recipes.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Recipes.collection.find();
+  }
+  return this.ready();
+});
+Meteor.publish(Profiles.generalPublicationName, function () {
+  return Profiles.collection.find({});
+});
+Meteor.publish(Profiles.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Profiles.collection.find();
   }
   return this.ready();
 });
