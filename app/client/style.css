@@ -106,7 +106,12 @@ a.nav-link:active
   font-family: "Arial Rounded MT Bold", sans-serif;
   border-radius: 15px;
 }
-
+.slantRight
+{
+  transform: skew(-30deg);
+  background-color: #DC1E0B;
+  min-height:500px;
+}
 .blurbImg {
           border-radius: 100%;
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Carousel } from 'react-bootstrap';
+import { Container, Row, Carousel, Col } from 'react-bootstrap';
 import Banner from '../components/Banner';
 import RecipeGrid from '../components/RecipeGrid';
 import Blurb from '../components/Blurb';
@@ -8,29 +8,18 @@ import Blurb from '../components/Blurb';
 const Landing = () => (
   <Container id="landing-page" fluid className="py-0">
     <Banner />
-    <Carousel>
+    <Carousel className="color2">
       <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
+        <Col className="slantRight color1" md={4}>
+          <div>
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </div>
+        </Col>
       </Carousel.Item>
-      <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width={900} height={500} alt="900x500" src="/carousel.png" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>;
+    </Carousel>
 
     <Container className="content color2 my-2">
       <Row className="text-center">
