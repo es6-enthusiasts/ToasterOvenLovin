@@ -9,7 +9,7 @@ const Landing = () => (
   <Container id="landing-page" fluid className="py-0">
     <InfoCarousel />
     <Banner />
-    <Container className="content color2 my-2">
+    <Container className="content color1 my-2">
       <Row className="text-center">
         <h1> Featured Recipes </h1>
       </Row>
