@@ -45,7 +45,7 @@ const navContent = function (User) {
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
           <Nav.Link href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link href="/listVendors">MyCookbook</Nav.Link>
+          <Nav.Link href="/cookbook">MyCookbook</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
           <Nav.Link href="/community">Community</Nav.Link>
         </Nav>
