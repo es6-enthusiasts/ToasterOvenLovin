@@ -64,7 +64,11 @@ const EditRecipe = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Edit Recipe</h2></Col>
+          <Col className="text-center  bg-white p-3 rounded">
+            <h2>Edit Recipe</h2>
+          </Col>
+          <br />
+
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
