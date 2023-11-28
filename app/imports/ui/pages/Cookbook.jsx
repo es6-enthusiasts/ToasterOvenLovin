@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Recipes } from '../../api/recipe/Recipes';
 import Recipe from '../components/Recipe';
@@ -26,10 +27,18 @@ const ListRecipes = () => {
 
   return (ready ? (
     <Container className="py-3">
+      <Row>
+        <Col text-center>
+          <Link to="/addRecipe">
+            <Button variant="primary">Add New Recipe</Button>
+          </Link>
+        </Col>
+      </Row>
+
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={10}>
           <Row xs={1} md={2} lg={3} className="g-4">
-            {recipes.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
+            {recipes.map((recipe) => (<Col key={recipe._id} xs={12} md={4}><Recipe recipe={recipe} /></Col>))}
           </Row>
         </Col>
       </Row>
