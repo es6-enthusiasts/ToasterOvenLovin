@@ -63,7 +63,7 @@ const TopMenu = () => {
   return (
     <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
-        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" /></Navbar.Brand>
+        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" width="40px" /></Navbar.Brand>
         {navContent(currentUser)}
         <Nav className="justify-content-end">
           {currentUser === '' ? (
