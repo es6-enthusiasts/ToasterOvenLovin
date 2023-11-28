@@ -17,6 +17,7 @@ import ListVendors from '../pages/ListVendors';
 import Community from '../pages/Community';
 import ListRecipes from '../pages/ListRecipes';
 import Cookbook from '../pages/Cookbook';
+import AddRecipe from '../pages/AddRecipe';
 import EditRecipe from '../pages/EditRecipe';
 import Stores from '../pages/Stores';
 import StoresAdmin from '../pages/StoresAdmin';
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
+          <Route path="/addRecipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
           <Route path="/community" element={<Community />} />
           <Route path="/cookbook" element={<ProtectedRoute><Cookbook /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
