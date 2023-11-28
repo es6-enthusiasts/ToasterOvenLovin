@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Image, Col, Container, Form, InputGroup } from 'react-bootstrap';
+import { Row, Col, Container, Form, InputGroup } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 
 const Banner = () => (
