@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendors/Vendors';
 import { Recipes } from '../../api/recipe/Recipes';
+import { Profiles } from '../../api/profiles/Profiles';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -46,10 +47,7 @@ Meteor.publish(null, function () {
 });
 // General publication. publish everything for everyone to see.
 Meteor.publish(Recipes.generalPublicationName, function () {
-  if (this.userId == null) {
-    return Recipes.collection.find();
-  }
-  return this.ready();
+  return Recipes.collection.find();
 });
 
 // User-level publication.
@@ -67,6 +65,15 @@ Meteor.publish(Recipes.userPublicationName, function () {
 Meteor.publish(Recipes.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Recipes.collection.find();
+  }
+  return this.ready();
+});
+Meteor.publish(Profiles.generalPublicationName, function () {
+  return Profiles.collection.find({});
+});
+Meteor.publish(Profiles.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Profiles.collection.find();
   }
   return this.ready();
 });

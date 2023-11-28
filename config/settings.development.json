@@ -88,5 +88,43 @@
       "noServings": 24,
       "timeToMake": 15
     }
+  ],
+
+  "defaultProfiles": [
+    {
+      "firstName": "William",
+      "lastName": "Simmons",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/willjsimmons.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Juliette",
+      "lastName": "Raubolt",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/julietteraubolt.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Loelle",
+      "lastName": "Lam",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/loellelam.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Janel",
+      "lastName": "Joson",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/janeljo.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Kyla",
+      "lastName": "Lee",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/kyla8.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    }
   ]
 }

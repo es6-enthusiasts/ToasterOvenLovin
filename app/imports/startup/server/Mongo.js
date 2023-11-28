@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendors/Vendors.js';
 import { Recipes } from '../../api/recipe/Recipes';
+import { Profiles } from '../../api/profiles/Profiles';
 
 /* eslint-disable no-console */
 
@@ -41,6 +42,19 @@ if (Recipes.collection.find().count() === 0) {
   if (Meteor.settings.defaultRecipes) {
     console.log('Creating default data.');
     Meteor.settings.defaultRecipes.forEach(data => addRecipe(data));
+
+  }
+}
+const addProfile = (data) => {
+  console.log(`  Adding: ${data.firstName} (${data.lastName})`);
+  Profiles.collection.insert(data);
+};
+
+// Initialize the StuffsCollection if empty.
+if (Profiles.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfiles) {
+    console.log('Creating default data.');
+    Meteor.settings.defaultProfiles.forEach(data => addProfile(data));
 
   }
 }
