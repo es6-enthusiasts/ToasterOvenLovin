@@ -2,42 +2,35 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
+ * The VendorsCollection. It encapsulates state and variable values for Vendors.
  */
-class RecipesCollection {
+class ProfilesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'Recipes';
+    this.name = 'Profiles';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      owner: String,
-      dishName: String,
-      description: String,
+
+      firstName: String,
+      lastName: String,
+      address: String,
       image: String,
-      ingredients: String,
-      equipment: String,
-      instructions: String,
-      dietaryRestriction: String,
-      costPerServing: SimpleSchema.Integer,
-      noServings: SimpleSchema.Integer,
-      timeToMake: SimpleSchema.Integer,
+      description: String,
+
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
-    // we have added a publication for everyone to see.
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
     this.generalPublicationName = `${this.name}.publication.general`;
   }
 }
+
 /**
- * The singleton instance of the StuffsCollection.
- * @type {RecipesCollection}
- * @param {generalPublicationName}
- * @param {userPublicationName}
- * @param {adminPublicationName}
+ * The singleton instance of the VendorsCollection.
+ * @type {VendorsCollection}
  */
-export const Recipes = new RecipesCollection();
+export const Profiles = new ProfilesCollection();
