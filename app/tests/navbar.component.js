@@ -33,10 +33,10 @@ class NavBar {
 
   /** Check that someone is logged in, then click items to logout. */
   async logout(testController) {
-    const visible = await Selector('#basic-navbar-nav').visible;
-    if (!visible) {
-      await testController.click('button.navbar-toggler');
-    }
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
     await testController.expect(Selector('#navbar-current-user').exists).ok();
     await testController.click('#navbar-current-user');
     await testController.click('#navbar-sign-out');
@@ -51,6 +51,14 @@ class NavBar {
     }
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
+  }
+
+  async gotoVendorPage(testController) {
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
+    await testController.click('#vendor-nav');
   }
 }
 

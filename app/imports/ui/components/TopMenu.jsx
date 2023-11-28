@@ -12,7 +12,7 @@ const navContent = function (User) {
     retVal = (
       <Nav className="mx-auto pt-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link href="/listVendors">Vendors</Nav.Link>
         <Nav.Link href="/community">Community</Nav.Link>
       </Nav>
@@ -23,7 +23,7 @@ const navContent = function (User) {
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
           <Nav.Link href="/community">Community</Nav.Link>
         </Nav>
@@ -34,7 +34,7 @@ const navContent = function (User) {
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
           <Nav.Link href="/community">Community</Nav.Link>
         </Nav>
@@ -44,7 +44,7 @@ const navContent = function (User) {
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link href="/listVendors">Vendors</Nav.Link>
+          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/cookbook">MyCookbook</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
           <Nav.Link href="/community">Community</Nav.Link>
@@ -61,7 +61,7 @@ const TopMenu = () => {
   }), []);
 
   return (
-    <Navbar className="color5" expand="sm">
+    <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
         <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
         {navContent(currentUser)}

@@ -26,7 +26,7 @@ const ListVendors = () => {
 
   // Now that we have the vendor data, we can render the cards
   return (ready ? (
-    <Container className="py-3">
+    <Container id="vendor-page" className="py-3">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center  bg-white p-3 rounded">
