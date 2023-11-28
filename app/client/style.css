@@ -51,6 +51,9 @@ body {
 .color3 {background-color: var(--color3);}
 .color4 {background-color: var(--color4);}
 .color5 {background-color: var(--color5);}
+.accent1{background-color: #DC1E0B;}
+.accent2{background-color: #97BE11;}
+.accent3{background-color:  #28590C;}
 #Login
 {
 
@@ -98,6 +101,38 @@ a.nav-link:active
 {
   border-radius: 15px;
 }
+.slantRight
+{
+  transform: skew(-30deg);
+  min-height:500px;
+}
+.unslant
+{
+  transform: skew(30deg);
+  min-height:500px;
+}
+
+.slide1
+{
+  background-image: url("https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/beancounter_big.jpg");
+}
+.slide2
+{
+ background-image: url("https://live.staticflickr.com/7086/13997431652_93fd028659_3k.jpg");
+}
+.slide3
+{
+background-image: url("https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3b360279-8b43-40f3-9b11-604749128187.jpg");
+}
+.fullBg
+{
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.blurbImg {
+          border-radius: 100%;
+        }
 .bannerLogo
 {
   border-radius: 25%;
@@ -110,4 +145,10 @@ a.nav-link:active
 
 h1 {
   font-size: 10vw;
+}
+
+.circle
+{
+  border-radius: 100%;
+  aspect-ratio: 1/1;
 }

@@ -22,72 +22,109 @@
   ],
 
   "defaultRecipes":
-    [
-      {
-        "owner": "john@foo.com",
-        "dishName": "Spaghetti Carbonara",
-        "description": "Classic Italian pasta dish with eggs, bacon, and cheese.",
-        "image": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-threeByTwoMediumAt2X-v2.jpg",
-        "ingredients": ["spaghetti", "eggs", "bacon", "cheese"],
-        "equipment": ["pot", "pan", "whisk"],
-        "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "dietaryRestriction": "None",
-        "costPerServing": 5,
-        "noServings": 4,
-        "timeToMake": 30
-      },
-      {
-        "owner": "alice@bar.com",
-        "dishName": "Chicken Alfredo",
-        "description": "Creamy Alfredo sauce with grilled chicken served over fettuccine.",
-        "image": "https://bellyfull.net/wp-content/uploads/2021/02/Chicken-Alfredo-blog-4-1152x1536.jpg",
-        "ingredients": ["chicken", "fettuccine", "heavy cream", "parmesan"],
-        "equipment": ["grill", "pot", "pan"],
-        "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "dietaryRestriction": "None",
-        "costPerServing": 8,
-        "noServings": 4,
-        "timeToMake": 45
-      },
-      {
-        "owner": "mary@example.com",
-        "dishName": "Vegetarian Stir-Fry",
-        "description": "Colorful stir-fried vegetables with tofu in a savory sauce.",
-        "image": "https://www.thecookierookie.com/wp-content/uploads/2023/02/featured-vegetable-stir-fry-recipe.jpg",
-        "ingredients": ["tofu", "broccoli", "carrots", "soy sauce"],
-        "equipment": ["wok", "knife", "cutting board"],
-        "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "dietaryRestriction": "Vegetarian",
-        "costPerServing": 6,
-        "noServings": 3,
-        "timeToMake": 25
-      },
-      {
-        "owner": "david@example.com",
-        "dishName": "Grilled Salmon",
-        "description": "Healthy grilled salmon seasoned with herbs and lemon.",
-        "image": "https://kristineskitchenblog.com/wp-content/uploads/2023/05/best-grilled-salmon-recipe-29.jpg",
-        "ingredients": ["salmon fillets", "lemon", "olive oil", "herbs"],
-        "equipment": ["grill", "tongs", "brush"],
-        "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "dietaryRestriction": "None",
-        "costPerServing": 12,
-        "noServings": 2,
-        "timeToMake": 20
-      },
-      {
-        "owner": "jane@baz.com",
-        "dishName": "Chocolate Chip Cookies",
-        "description": "Classic chocolate chip cookies with a soft and chewy texture.",
-        "image": "https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg",
-        "ingredients": ["flour", "butter", "chocolate chips", "sugar"],
-        "equipment": ["mixer", "baking sheet", "oven"],
-        "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "dietaryRestriction": "None",
-        "costPerServing": 3,
-        "noServings": 24,
-        "timeToMake": 15
-      }
-    ]
-}
+  [
+    {
+      "owner": "john@foo.com",
+      "dishName": "Spaghetti Carbonara",
+      "description": "Classic Italian pasta dish with eggs, bacon, and cheese.",
+      "image": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-threeByTwoMediumAt2X-v2.jpg",
+      "ingredients": "spaghetti, eggs, bacon, cheese",
+      "equipment": "pot, pan, whisk",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 5,
+      "noServings": 4,
+      "timeToMake": 30
+    },
+    {
+      "owner": "alice@bar.com",
+      "dishName": "Chicken Alfredo",
+      "description": "Creamy Alfredo sauce with grilled chicken served over fettuccine.",
+      "image": "https://bellyfull.net/wp-content/uploads/2021/02/Chicken-Alfredo-blog-4-1152x1536.jpg",
+      "ingredients": "chicken, fettuccine, heavy cream, parmesan",
+      "equipment": "grill, pot, pan",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 8,
+      "noServings": 4,
+      "timeToMake": 45
+    },
+    {
+      "owner": "mary@example.com",
+      "dishName": "Vegetarian Stir-Fry",
+      "description": "Colorful stir-fried vegetables with tofu in a savory sauce.",
+      "image": "https://www.thecookierookie.com/wp-content/uploads/2023/02/featured-vegetable-stir-fry-recipe.jpg",
+      "ingredients": "tofu, broccoli, carrots, soy sauce",
+      "equipment": "wok, knife, cutting board",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "Vegetarian",
+      "costPerServing": 6,
+      "noServings": 3,
+      "timeToMake": 25
+    },
+    {
+      "owner": "david@example.com",
+      "dishName": "Grilled Salmon",
+      "description": "Healthy grilled salmon seasoned with herbs and lemon.",
+      "image": "https://kristineskitchenblog.com/wp-content/uploads/2023/05/best-grilled-salmon-recipe-29.jpg",
+      "ingredients": "salmon fillets, lemon, olive oil, herbs",
+      "equipment": "grill, tongs, brush",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 12,
+      "noServings": 2,
+      "timeToMake": 20
+    },
+    {
+      "owner": "jane@baz.com",
+      "dishName": "Chocolate Chip Cookies",
+      "description": "Classic chocolate chip cookies with a soft and chewy texture.",
+      "image": "https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg",
+      "ingredients": "flour, butter, chocolate chips, sugar",
+      "equipment": "mixer, baking sheet, oven",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "dietaryRestriction": "None",
+      "costPerServing": 3,
+      "noServings": 24,
+      "timeToMake": 15
+    }
+  ],
 
+  "defaultProfiles": [
+    {
+      "firstName": "William",
+      "lastName": "Simmons",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/willjsimmons.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Juliette",
+      "lastName": "Raubolt",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/julietteraubolt.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Loelle",
+      "lastName": "Lam",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/loellelam.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Janel",
+      "lastName": "Joson",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/janeljo.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    },
+    {
+      "firstName": "Kyla",
+      "lastName": "Lee",
+      "address": "1234 candyCane Lane",
+      "image": "https://github.com/kyla8.png",
+      "description": "an adept leader who succeeds everywhere all the time."
+    }
+  ]
+}

@@ -26,7 +26,7 @@ const ListRecipes = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={10}>
           <Row xs={1} md={2} lg={3} className="g-4">
             {recipes.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
           </Row>
