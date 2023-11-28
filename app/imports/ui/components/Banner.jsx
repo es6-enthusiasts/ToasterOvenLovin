@@ -9,7 +9,7 @@ const Banner = () => (
         <Col md={8} className="text-center align-middle justify-content-center">
           <div className="vertical-center justify-content-center">
             <Row>
-              <h1>Welcome To College Cuisine Connection</h1>
+              <h1>Welcome To College Cuisine Connect</h1>
               <h2>a project by students for students.</h2>
             </Row>
             <Row className="justify-content-center">
