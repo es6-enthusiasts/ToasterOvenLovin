@@ -11,8 +11,8 @@ const RecipeCard = ({ recipe }) => (
       <Card.Text>{recipe.description}</Card.Text>
 
       <Card.Title>Ingredients</Card.Title>
-      <ul>
-        {recipe.ingredients.map((ingredient, index) => (
+      <ul style={{ listStyleType: 'circle' }}>
+        {recipe.ingredients.split(', ').map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
@@ -33,8 +33,8 @@ RecipeCard.propTypes = {
     dishName: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
-    ingredients: PropTypes.arrayOf(PropTypes.string),
-    equipment: PropTypes.arrayOf(PropTypes.string),
+    ingredients: PropTypes.string,
+    equipment: PropTypes.string,
     instructions: PropTypes.string,
     dietaryRestriction: PropTypes.string,
     costPerServing: PropTypes.number,

@@ -16,16 +16,8 @@ class RecipesCollection {
       dishName: String,
       description: String,
       image: String,
-      ingredients: {
-        type: Array,
-        optional: [],
-      },
-      'ingredients.$': String,
-      equipment: {
-        type: Array,
-        required: true,
-      },
-      'equipment.$': String,
+      ingredients: String,
+      equipment: String,
       instructions: String,
       dietaryRestriction: String,
       costPerServing: SimpleSchema.Integer,
