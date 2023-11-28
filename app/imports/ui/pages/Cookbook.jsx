@@ -28,13 +28,14 @@ const ListRecipes = () => {
   return (ready ? (
     <Container className="py-3">
       <Row>
-        <Col text-center>
+        <Col className="text-center  bg-white p-3 rounded">
+          <h2>My Cookbook</h2>
           <Link to="/addRecipe">
             <Button variant="primary">Add New Recipe</Button>
           </Link>
         </Col>
       </Row>
-
+      <br />
       <Row className="justify-content-center">
         <Col md={10}>
           <Row xs={1} md={2} lg={3} className="g-4">
