@@ -6,7 +6,7 @@ import { Card, Col, Image, Row } from 'react-bootstrap';
  *  Card will have the store image, name, horus, and location as the header,
  *  in the body the ingredients will be listen in two columns */
 const Vendor = ({ vendor }) => (
-  <Card className="h-100">
+  <Card className="card store h-100">
     <Card.Header className="d-flex flex-column align-items-center">
       <Image src={vendor.image} width={150} />
       <Card.Title className="text-center">{vendor.storeName}</Card.Title>

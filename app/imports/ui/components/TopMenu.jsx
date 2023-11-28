@@ -44,7 +44,7 @@ const navContent = function (User) {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/listVendors">MyCookbook</Nav.Link>
+        <Nav.Link href="/listVendors">My Cookbook</Nav.Link>
         <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
         <Nav.Link href="/community">Community</Nav.Link>
       </Nav>
@@ -64,7 +64,7 @@ const TopMenu = () => {
   return (
     <Navbar className="color5" expand="sm">
       <Container>
-        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
+        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" /></Navbar.Brand>
         {navContent(currentUser)}
         <Nav className="justify-content-end">
           {currentUser === '' ? (
