@@ -26,7 +26,7 @@ const Community = () => {
   }, []);
   return (
     ready ? (
-      <Container id="landing-page" fluid className="py-0">
+      <Container id="community-page" fluid className="py-0">
         <Banner />
         <Container className="content my-2">
           <Row xs={1} md={2} lg={3} className="g-4">

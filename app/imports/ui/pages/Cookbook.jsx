@@ -8,7 +8,7 @@ import Recipe from '../components/Recipe';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 /* Renders a table containing all of the Recipe documents. Use <Recipe> to render each row. */
-const ListRecipes = () => {
+const Cookbook = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, recipes } = useTracker(() => {
     // Note that this subscription will get cleaned up
@@ -26,7 +26,7 @@ const ListRecipes = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container id="cookbook-page" className="py-3">
       <Row>
         <Col className="text-center  bg-white p-3 rounded">
           <h2>My Cookbook</h2>
@@ -47,4 +47,4 @@ const ListRecipes = () => {
   ) : <LoadingSpinner />);
 };
 
-export default ListRecipes;
+export default Cookbook;

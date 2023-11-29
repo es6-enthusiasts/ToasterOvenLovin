@@ -60,6 +60,30 @@ class NavBar {
     // }
     await testController.click('#vendor-nav');
   }
+
+  async gotoRecipesPage(testController) {
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
+    await testController.click('#recipe-nav');
+  }
+
+  async gotoMyCookbookPage(testController) {
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
+    await testController.click('#cookbook-nav');
+  }
+
+  async gotoCommunityPage(testController) {
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
+    await testController.click('#community-nav');
+  }
 }
 
 export const navBar = new NavBar();
