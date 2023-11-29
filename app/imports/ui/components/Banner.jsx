@@ -1,32 +1,28 @@
 import React from 'react';
-import { Row, Image, Col, Container, Form, InputGroup } from 'react-bootstrap';
+import { Row, Col, Container, Form, InputGroup } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 
 const Banner = () => (
-  <Row className="color2">
-    <Container>
-      <Row>
-        <Col md={8} className="text-center align-middle justify-content-center">
-          <div className="vertical-center justify-content-center">
-            <Row>
-              <h1>Welcome To College Cuisine Connection</h1>
-              <h2>a project by students for students.</h2>
-            </Row>
-            <Row className="justify-content-center">
-              <Col xs="6">
-                <InputGroup>
-                  <InputGroup.Text id="basic-addon1"><Search /></InputGroup.Text>
-                  <Form.Control placeholder="Search for recipes" />
-                </InputGroup>
-              </Col>
-            </Row>
-          </div>
-        </Col>
-        <Col md={4} className="justify-content-center">
-          <Image src="/images/bannerSoup.png" width="100%" />
-        </Col>
-      </Row>
-    </Container>
-  </Row>
+  <Container className="content pb-3">
+    <Row>
+      <Col md={8} className="align-middle justify-content-center">
+        <div className="vertical-center justify-content-center">
+          <Row>
+            <h1 className="text-uppercase">Discover<br /> New<br /> Tastes</h1>
+            <h4>Find simple recipes made for students, by students.</h4>
+          </Row>
+          <Row className="justify-content-center">
+            <Col xs="6">
+              <InputGroup>
+                <InputGroup.Text id="basic-addon1"><Search /></InputGroup.Text>
+                <Form.Control placeholder="Search for recipes" className="search" />
+              </InputGroup>
+            </Col>
+          </Row>
+        </div>
+      </Col>
+      <Col md={4} className="justify-content-center" />
+    </Row>
+  </Container>
 );
 export default Banner;

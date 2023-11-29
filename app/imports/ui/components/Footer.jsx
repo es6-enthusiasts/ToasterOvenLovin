@@ -12,7 +12,7 @@ const Footer = () => (
         Honolulu Hawaii
         {' '}
         <br />
-        <a href="https://es6-enthusiasts.github.io/CollegeCuisineConnection/">About College-Cuisine-Connection</a>
+        <a href="https://es6-enthusiasts.github.io/CollegeCuisineConnect/">About College-Cuisine-Connect</a>
         <br />
         <a href="https://docs.google.com/document/d/1o7tGRP024l86Usm7qH7RX9-gTofHFc-ff8x5b5ZbVPA/edit">Team Contract</a>
       </Col>

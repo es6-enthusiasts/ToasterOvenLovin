@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class CommunityPage {
+class MyCookbookPage {
   constructor() {
-    this.pageId = '#community-page';
+    this.pageId = '#cookbook-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -12,4 +12,4 @@ class CommunityPage {
   }
 }
 
-export const communityPage = new CommunityPage();
+export const mycookbookPage = new MyCookbookPage();

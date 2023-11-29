@@ -1,15 +1,15 @@
-/* Use Open Sans as the default sans serif font. */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+/* Use DM Sans as the default sans serif font. */
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,700");
 
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #ECECEC;
+  --matr-navbar-bg: #F2E8CF;
   --matr-navbar-bg-rgb: 236, 236, 236;
-  --color1: #BBBF4E;
+  --color1: #B9D16E;
   --color2: #F2F2F2;
   --color3: #F2BC57;
-  --color4: #F2AF5C;
-  --color5: #734D2C;
+  --color4: #3F4726;
+  --color5: #F2E8CF;
   --color5lt: #956F4E;
   --color5dk: #512b0a;
 }
@@ -19,10 +19,18 @@
  */
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-repeat: repeat-y;
+  --bs-body-bg: var(--matr-navbar-bg);
+  --bs-body-font-family: 'DM Sans', sans-serif; /* Use 'DM Sans' as the font-family */
 }
+
 .vertical-center
 {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 /* Set the alert background on the signin and signup pages. */
@@ -38,16 +46,6 @@ body {
   padding-bottom: 20px;
 }
 
-body {
-  margin: 0;
-  font-family: Georgia, Serif, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url('/images/background.png');
-  background-size: cover;
-  background-repeat: repeat-y;
-
-}
 .color1 {background-color: var(--color1);}
 .color2 { background-color: var(--color2);}
 .color3 {background-color: var(--color3);}
@@ -64,10 +62,10 @@ body {
 {
   padding: 1.5em;
 }
-.card{
+.card.recipe, .card.store{
+  background-color: var(--color2);
   padding: 1em;
   margin-bottom: 1em;
-
 }
 .card ul
 {
@@ -78,8 +76,6 @@ body {
   width: 100%;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
 }
 li.nav-item.nav-link
 {
@@ -90,20 +86,19 @@ li.nav-item.nav-link
 a.nav-link
 {
   color: var(--color4);
-  font-size: 2em;
+  font-size: 1.5em;
   padding-right: 2em;
 }
 a.nav-link:hover
 {
-  background-color: var(--color5dk);
+  background-color: var(--color3);
 }
 a.nav-link:active
 {
-  background-color: var(--color5lt);
+  background-color: var(--color1);
 }
 .content
 {
-  font-family: "Arial Rounded MT Bold", sans-serif;
   border-radius: 15px;
 }
 .slantRight
@@ -143,6 +138,15 @@ background-image: url("https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3
   border-radius: 25%;
   max-height: 5em;
 }
+
+.form-control.search {
+  background-color: #F2F2F2;
+}
+
+h1 {
+  font-size: 10vw;
+}
+
 .circle
 {
   border-radius: 100%;

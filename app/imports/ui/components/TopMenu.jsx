@@ -14,7 +14,7 @@ const navContent = function (User) {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link id="vendor-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/community">Community</Nav.Link>
+        <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
   } else {
@@ -22,10 +22,10 @@ const navContent = function (User) {
       retVal = (
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
           <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link href="/community">Community</Nav.Link>
+          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
         </Nav>
       );
     }
@@ -33,21 +33,21 @@ const navContent = function (User) {
       retVal = (
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
           <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link href="/community">Community</Nav.Link>
+          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
         </Nav>
       );
     } else {
       retVal = (
         <Nav className="mx-auto pt-auto">
           <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/listRecipes">Recipes</Nav.Link>
+          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
           <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link href="/cookbook">MyCookbook</Nav.Link>
+          <Nav.Link id="cookbook-nav" href="/Cookbook">My Cookbook</Nav.Link>
           <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link href="/community">Community</Nav.Link>
+          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
         </Nav>
       );
     }
@@ -63,7 +63,7 @@ const TopMenu = () => {
   return (
     <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
-        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/logo.png" alt="logo" /><strong>College Cuisine Connection</strong></Navbar.Brand>
+        <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" width="40px" /></Navbar.Brand>
         {navContent(currentUser)}
         <Nav className="justify-content-end">
           {currentUser === '' ? (

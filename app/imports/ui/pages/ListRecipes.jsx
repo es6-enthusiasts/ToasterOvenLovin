@@ -24,7 +24,7 @@ const ListRecipes = () => {
     };
   }, []);
   return (ready ? (
-    <Container className="py-3">
+    <Container id="recipes-page" className="py-3">
       <Row className="justify-content-center">
         <Col md={10}>
           <Row xs={1} md={2} lg={3} className="g-4">
