@@ -31,7 +31,7 @@ const Cookbook = () => {
         <Col className="text-center  bg-white p-3 rounded">
           <h2>My Cookbook</h2>
           <Link to="/addRecipe">
-            <Button variant="primary">Add New Recipe</Button>
+            <Button id="add-recipe" variant="primary">Add New Recipe</Button>
           </Link>
         </Col>
       </Row>

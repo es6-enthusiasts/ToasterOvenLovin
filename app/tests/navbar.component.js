@@ -84,6 +84,15 @@ class NavBar {
     // }
     await testController.click('#community-nav');
   }
+
+  async gotoAddRecipePage(testController) {
+    // const visible = await Selector('#basic-navbar-nav').visible;
+    // if (!visible) {
+    //   await testController.click('button.navbar-toggler');
+    // }
+    await testController.click('#cookbook-nav');
+    await testController.click('#add-recipe');
+  }
 }
 
 export const navBar = new NavBar();

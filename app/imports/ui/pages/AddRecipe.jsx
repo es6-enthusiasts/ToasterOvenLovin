@@ -69,7 +69,7 @@ const AddRecipe = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container id="add-recipe-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Add Recipe</h2></Col>
@@ -77,22 +77,22 @@ const AddRecipe = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="dishName" /></Col>
-                  <Col><TextField name="image" /></Col>
+                  <Col><TextField id="add-recipe-name" name="dishName" /></Col>
+                  <Col><TextField id="add-recipe-image" name="image" /></Col>
                 </Row>
-                <LongTextField name="description" />
+                <LongTextField id="add-recipe-description" name="description" />
                 <Row>
-                  <Col><TextField name="equipment" /></Col>
-                  <Col><TextField name="ingredients" /></Col>
+                  <Col><TextField id="add-recipe-equipment" name="equipment" /></Col>
+                  <Col><TextField id="add-recipe-ingredients" name="ingredients" /></Col>
                 </Row>
-                <LongTextField name="instructions" />
+                <LongTextField id="add-recipe-instructions" name="instructions" />
                 <Row>
-                  <Col><TextField name="dietaryRestriction" /></Col>
-                  <Col><TextField name="costPerServing" /></Col>
-                  <Col><TextField name="noServings" /></Col>
-                  <Col><TextField name="timeToMake" /></Col>
+                  <Col><TextField id="add-recipe-restrictions" name="dietaryRestriction" /></Col>
+                  <Col><TextField id="add-recipe-cost" name="costPerServing" /></Col>
+                  <Col><TextField id="add-recipe-servings" name="noServings" /></Col>
+                  <Col><TextField id="add-recipe-time" name="timeToMake" /></Col>
                 </Row>
-                <SubmitField value="Submit" />
+                <SubmitField id="add-recipe-submit" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

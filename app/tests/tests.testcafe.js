@@ -6,6 +6,7 @@ import { vendorPage } from './vendors.page';
 import { recipesPage } from './recipes.page';
 import { mycookbookPage } from './cookbook.page';
 import { communityPage } from './community.page';
+import { addRecipePage } from './addrecipe.page';
 
 /* global fixture:false, test:false */
 
@@ -57,4 +58,12 @@ test('Test that community page shows up', async (testController) => {
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoCommunityPage(testController);
   await communityPage.isDisplayed(testController);
+});
+
+test('Test that add recipe page works', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoAddRecipePage(testController);
+  await addRecipePage.isDisplayed(testController);
+  await addRecipePage.addRecipe(testController);
 });
