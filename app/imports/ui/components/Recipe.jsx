@@ -2,49 +2,55 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import RecipeModal from './RecipeModal';
 
-const RecipeCard = ({ recipe }) => (
-  <Card className="card color2 pt-4 text-center h-100">
-    <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
-    <Card.Body>
-      <Card.Title>{recipe.dishName}</Card.Title>
-      <Card.Text>{recipe.description}</Card.Text>
+const RecipeCard = ({ recipe }) => {
+  let showRecipe = 0;
+  return (
+    <Card className="card color2 pt-4 text-center h-100">
+      <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
+      <Card.Body>
+        <Card.Title>{recipe.dishName}</Card.Title>
+        <Card.Text>{recipe.description}</Card.Text>
 
-      <Card.Title>Ingredients</Card.Title>
-      <ul style={{ listStyleType: 'circle' }}>
-        {recipe.ingredients.split(', ').map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
+        <Card.Title>Ingredients</Card.Title>
+        <ul style={{ listStyleType: 'circle' }}>
+          {recipe.ingredients.split(', ').map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
 
-      <Card.Title>Equipment</Card.Title>
-      <ul style={{ listStyleType: 'circle' }}>
-        {recipe.equipment.split(', ').map((equipment, index) => (
-          <li key={index}>{equipment}</li>
-        ))}
-      </ul>
+        <Card.Title>Equipment</Card.Title>
+        <ul style={{ listStyleType: 'circle' }}>
+          {recipe.equipment.split(', ').map((equipment, index) => (
+            <li key={index}>{equipment}</li>
+          ))}
+        </ul>
 
-      <Card.Title>Instructions</Card.Title>
-      <Card.Text>{recipe.instructions}</Card.Text>
+        <Card.Title>Instructions</Card.Title>
+        <Card.Text>{recipe.instructions}</Card.Text>
 
-      <Card.Title>Dietary Restriction</Card.Title>
-      <Card.Text>{recipe.dietaryRestriction}</Card.Text>
+        <Card.Title>Dietary Restriction</Card.Title>
+        <Card.Text>{recipe.dietaryRestriction}</Card.Text>
 
-      <Card.Title>Cost Per Serving</Card.Title>
-      <Card.Text>{recipe.costPerServing}</Card.Text>
+        <Card.Title>Cost Per Serving</Card.Title>
+        <Card.Text>{recipe.costPerServing}</Card.Text>
 
-      <Card.Title>Number of Servings</Card.Title>
-      <Card.Text>{recipe.noServings}</Card.Text>
+        <Card.Title>Number of Servings</Card.Title>
+        <Card.Text>{recipe.noServings}</Card.Text>
 
-      <Card.Title>Time to Make</Card.Title>
-      <Card.Text>{recipe.timeToMake}</Card.Text>
+        <Card.Title>Time to Make</Card.Title>
+        <Card.Text>{recipe.timeToMake}</Card.Text>
 
-      <Link to={`/edit/${recipe._id}`}>
-        <Button variant="primary">Edit</Button>
-      </Link>
-    </Card.Body>
-  </Card>
-);
+        <Link to={`/edit/${recipe._id}`}>
+          <Button variant="primary">Edit</Button>
+        </Link>
+        <Button variant="primary" onClick={(e) => { showRecipe = recipe._id; }}>View Recipe</Button>
+      </Card.Body>
+      <RecipeModal recipe={recipe} recipeToShow={recipe._id === showRecipe} />
+    </Card>
+  );
+};
 
 RecipeCard.propTypes = {
   recipe: PropTypes.shape({
