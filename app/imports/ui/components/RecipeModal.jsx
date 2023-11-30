@@ -3,8 +3,8 @@ import { Row, Col, Button, Modal, Image, ModalTitle } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const RecipeModal = ({ recipe }) => (
-  <Modal size="xl">
+const RecipeModal = ({ recipe, visibility }) => (
+  <Modal size="xl" show={visibility}>
     <Modal.Header>
       <ModalTitle className="text-center">{recipe.dishName}</ModalTitle>
     </Modal.Header>
@@ -78,6 +78,7 @@ RecipeModal.propTypes = {
     timeToMake: PropTypes.number,
     _id: PropTypes.string,
   }).isRequired,
+  visibility: PropTypes.bool,
 };
 
 export default RecipeModal;
