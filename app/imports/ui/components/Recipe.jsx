@@ -11,14 +11,14 @@ const RecipeCard = ({ recipe }) => (
       <Card.Text>{recipe.description}</Card.Text>
 
       <Card.Title>Ingredients</Card.Title>
-      <ul style={{ listStyleType: 'circle' }}>
+      <ul style={{ listStyleType: 'circle', textAlign: 'left' }}>
         {recipe.ingredients.split(', ').map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
 
       <Card.Title>Equipment</Card.Title>
-      <ul style={{ listStyleType: 'circle' }}>
+      <ul style={{ listStyleType: 'circle', textAlign: 'left' }}>
         {recipe.equipment.split(', ').map((equipment, index) => (
           <li key={index}>{equipment}</li>
         ))}
