@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 const RecipeModal = ({ recipe, visibility }) => (
   <Modal size="xl" show={visibility}>
-    <Modal.Header>
+    <Modal.Header className="color2">
       <ModalTitle className="text-center">{recipe.dishName}</ModalTitle>
     </Modal.Header>
-    <Modal.Body>
+    <Modal.Body className="color2">
       <Image className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
       <Row>
         <p>{recipe.description}</p>
