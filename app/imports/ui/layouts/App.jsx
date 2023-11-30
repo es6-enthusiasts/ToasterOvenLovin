@@ -42,15 +42,15 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<Landing />} />
-          <Route path="/Stores" element={<ProtectedRoute><Stores /></ProtectedRoute>} />
+          <Route path="/Stores" element={<VendorProtectedRoute><Stores /></VendorProtectedRoute>} />
           <Route path="/StoresAdmin" element={<AdminProtectedRoute ready={ready}><StoresAdmin /></AdminProtectedRoute>} />
-          <Route path="/editVendor/:_id" element={<ProtectedRoute><EditStore /></ProtectedRoute>} />
+          <Route path="/editVendor/:_id" element={<VendorProtectedRoute><EditStore /></VendorProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditRecipe /></ProtectedRoute>} />
-          <Route path="/addRecipe" element={<ProtectedRoute><AddRecipe /></ProtectedRoute>} />
+          <Route path="/edit/:_id" element={<StudentProtectedRoute><EditRecipe /></StudentProtectedRoute>} />
+          <Route path="/addRecipe" element={<StudentProtectedRoute><AddRecipe /></StudentProtectedRoute>} />
           <Route path="/community" element={<Community />} />
-          <Route path="/cookbook" element={<ProtectedRoute><Cookbook /></ProtectedRoute>} />
+          <Route path="/cookbook" element={<StudentProtectedRoute><Cookbook /></StudentProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -68,6 +68,30 @@ const App = () => {
 const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
   return isLogged ? children : <Navigate to="/signin" />;
+};
+
+const StudentProtectedRoute = ({ ready, children }) => {
+  const isLogged = Meteor.userId() !== null;
+  if (!isLogged) {
+    return <Navigate to="/signin" />;
+  }
+  if (!ready) {
+    return <LoadingSpinner />;
+  }
+  const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
+  return (isLogged && isStudent) ? children : <Navigate to="/notauthorized" />;
+};
+
+const VendorProtectedRoute = ({ ready, children }) => {
+  const isLogged = Meteor.userId() !== null;
+  if (!isLogged) {
+    return <Navigate to="/signin" />;
+  }
+  if (!ready) {
+    return <LoadingSpinner />;
+  }
+  const isVendor = Roles.userIsInRole(Meteor.userId(), 'vendor');
+  return (isLogged && isVendor) ? children : <Navigate to="/notauthorized" />;
 };
 
 /**
@@ -107,4 +131,25 @@ AdminProtectedRoute.defaultProps = {
   children: <Landing />,
 };
 
+// Require a component and location to be passed to each AdminProtectedRoute.
+StudentProtectedRoute.propTypes = {
+  ready: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+};
+
+StudentProtectedRoute.defaultProps = {
+  ready: false,
+  children: <Landing />,
+};
+
+// Require a component and location to be passed to each AdminProtectedRoute.
+VendorProtectedRoute.propTypes = {
+  ready: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+};
+
+VendorProtectedRoute.defaultProps = {
+  ready: false,
+  children: <Landing />,
+};
 export default App;
