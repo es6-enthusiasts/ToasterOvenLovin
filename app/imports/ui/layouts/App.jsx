@@ -42,15 +42,15 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<Landing />} />
-          <Route path="/Stores" element={<VendorProtectedRoute><Stores /></VendorProtectedRoute>} />
+          <Route path="/Stores" element={<VendorProtectedRoute ready={ready}><Stores /></VendorProtectedRoute>} />
           <Route path="/StoresAdmin" element={<AdminProtectedRoute ready={ready}><StoresAdmin /></AdminProtectedRoute>} />
-          <Route path="/editVendor/:_id" element={<VendorProtectedRoute><EditStore /></VendorProtectedRoute>} />
+          <Route path="/editVendor/:_id" element={<VendorProtectedRoute ready={ready}><EditStore /></VendorProtectedRoute>} />
           <Route path="/listVendors" element={<ListVendors />} />
           <Route path="/listRecipes" element={<ListRecipes />} />
-          <Route path="/edit/:_id" element={<StudentProtectedRoute><EditRecipe /></StudentProtectedRoute>} />
-          <Route path="/addRecipe" element={<StudentProtectedRoute><AddRecipe /></StudentProtectedRoute>} />
+          <Route path="/edit/:_id" element={<StudentProtectedRoute ready={ready}><EditRecipe /></StudentProtectedRoute>} />
+          <Route path="/addRecipe" element={<StudentProtectedRoute ready={ready}><AddRecipe /></StudentProtectedRoute>} />
           <Route path="/community" element={<Community />} />
-          <Route path="/cookbook" element={<StudentProtectedRoute><Cookbook /></StudentProtectedRoute>} />
+          <Route path="/cookbook" element={<StudentProtectedRoute ready={ready}><Cookbook /></StudentProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
