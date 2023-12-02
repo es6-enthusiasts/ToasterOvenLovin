@@ -7,6 +7,7 @@ import RecipeModal from './RecipeModal';
 const RecipeCard = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   return (
     <Card className="card recipe color2 pt-4 text-center h-100">
       <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
@@ -22,8 +23,8 @@ const RecipeCard = ({ recipe }) => {
         <Link to={`/edit/${recipe._id}`}>
           <Button variant="primary">Edit</Button>
         </Link>
-        <Button variant="primary" onClick={(e) => (handleShow())}>View Recipe</Button>
-        <RecipeModal recipe={recipe} visibility={show} />
+        <Button variant="primary" onClick={handleShow}>View Recipe</Button>
+        <RecipeModal recipe={recipe} visibility={show} onClose={handleClose}/>
       </Card.Body>
     </Card>
   );

@@ -3,7 +3,7 @@ import { Row, Col, Button, Modal, Image, ModalTitle } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const RecipeModal = ({ recipe, visibility }) => (
+const RecipeModal = ({ recipe, visibility, onClose }) => (
   <Modal size="xl" show={visibility}>
     <Modal.Header className="color2">
       <ModalTitle className="text-center">{recipe.dishName}</ModalTitle>
@@ -56,7 +56,7 @@ const RecipeModal = ({ recipe, visibility }) => (
         <Button variant="primary">Edit</Button>
       </Link>
       <br />
-      <Button variant="secondary">
+      <Button variant="secondary" onClick={onClose}>
         Exit
       </Button>
     </Modal.Body>
@@ -79,6 +79,7 @@ RecipeModal.propTypes = {
     _id: PropTypes.string,
   }).isRequired,
   visibility: PropTypes.bool,
+  onClose: PropTypes.func,
 };
 
 export default RecipeModal;
