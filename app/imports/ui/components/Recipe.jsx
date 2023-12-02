@@ -23,6 +23,7 @@ const RecipeCard = ({ recipe }) => {
         <Link to={`/edit/${recipe._id}`}>
           <Button variant="primary">Edit</Button>
         </Link>
+        <br/><br/>
         <Button variant="primary" onClick={handleShow}>View Recipe</Button>
         <RecipeModal recipe={recipe} visibility={show} onClose={handleClose}/>
       </Card.Body>
