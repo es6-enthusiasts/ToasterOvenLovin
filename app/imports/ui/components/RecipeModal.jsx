@@ -3,7 +3,7 @@ import { Row, Col, Button, Modal, Image, ModalTitle } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const RecipeModal = ({ recipe, visibility, onClose }) => (
+const RecipeModal = ({ recipe, visibility, onClose , canEdit}) => (
   <Modal size="lg" show={visibility}>
     <Modal.Header className="color2 text-center">
       <ModalTitle>{recipe.dishName}</ModalTitle>
@@ -55,9 +55,7 @@ const RecipeModal = ({ recipe, visibility, onClose }) => (
         <p>{recipe.dietaryRestriction}</p>
       </Row>
       <Row className={"text-center"}>
-        <Link to={`/edit/${recipe._id}`}>
-          <Button variant="primary">Edit</Button>
-        </Link>
+        {canEdit()}
         <br/>
         <br/>
         <div>
@@ -87,6 +85,7 @@ RecipeModal.propTypes = {
   }).isRequired,
   visibility: PropTypes.bool,
   onClose: PropTypes.func,
+  canEdit: PropTypes.func,
 };
 
 export default RecipeModal;
