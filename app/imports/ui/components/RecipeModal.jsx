@@ -55,13 +55,13 @@ const RecipeModal = ({ recipe, visibility, onClose , canEdit}) => (
         <p>{recipe.dietaryRestriction}</p>
       </Row>
       <Row className={"text-center"}>
-        {canEdit()}
-        <br/>
-        <br/>
         <div>
         <Button variant="secondary" size="sm" onClick={onClose}>
           Exit
         </Button>
+          <br/>
+          <br/>
+          {canEdit()}
         </div>
       </Row>
     </Modal.Body>

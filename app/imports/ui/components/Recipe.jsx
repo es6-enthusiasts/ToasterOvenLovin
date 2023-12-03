@@ -14,12 +14,27 @@ const RecipeCard = ({ recipe }) => {
         currentUser: Meteor.user() ? Meteor.user().username : '',
     }), []);
   const selectiveEdit = () => {
-      if(currentUser == recipe.owner || Roles.userIsInRole(Meteor.userId(), 'admin') )
+      if(currentUser == recipe.owner)
       {
           return(
       <Link to={`/edit/${recipe._id}`}>
         <Button variant="primary">Edit</Button>
       </Link>
+          );
+      }
+      else if(Roles.userIsInRole(Meteor.userId(), 'admin'))
+      {
+          return(
+              <div>
+              <Link to={`/edit/${recipe._id}`}>
+                  <Button variant="primary">Edit</Button>
+              </Link>
+                  <br/>
+                  <br/>
+                  <strong>Owned by {recipe.owner}</strong>
+              </div>
+
+
           );
       }
   };
@@ -35,10 +50,10 @@ const RecipeCard = ({ recipe }) => {
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        {selectiveEdit()}
-        <br/><br/>
         <Button variant="primary" onClick={handleShow}>View Recipe</Button>
-        <RecipeModal recipe={recipe} visibility={show} onClose={handleClose} canEdit={selectiveEdit}/>
+          <br/><br/>
+          {selectiveEdit()}
+          <RecipeModal recipe={recipe} visibility={show} onClose={handleClose} canEdit={selectiveEdit}/>
       </Card.Body>
     </Card>
   );
