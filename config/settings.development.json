@@ -267,7 +267,7 @@
       "timeToMake": 15
     },
     {
-      "owner": "mary@example.com”,
+      "owner": "mary@example.com",
       "dishName": "Beef and Broccoli Stir-Fry",
       "description": "A quick and savory stir-fry featuring tender beef slices, crisp broccoli, and a flavorful soy-based sauce.",
       "image": "https://silkroadrecipes.com/wp-content/uploads/2022/08/Broccoli-Beef-Stir-Fry-square.jpg",
@@ -599,7 +599,7 @@
       "owner": "mary@example.com",
       "dishName": "Honey Mustard Glazed Salmon",
       "description": "Flaky salmon fillets glazed with a sweet and tangy honey mustard sauce, baked to perfection.",
-      "image": “https://www.simplyrecipes.com/thmb/feOFXZ5eWWTcbo1XlxvwnXYJE58=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2016__01__Honey-Mustard-Salmon-LEAD-3-97dfe268629544428260455ea6d367fd.jpg",
+      "image": "https://www.simplyrecipes.com/thmb/feOFXZ5eWWTcbo1XlxvwnXYJE58=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2016__01__Honey-Mustard-Salmon-LEAD-3-97dfe268629544428260455ea6d367fd.jpg",
     "ingredients": "salmon fillets, Dijon mustard, honey, garlic, lemon",
       "equipment": "baking sheet, brush, aluminum foil",
       "instructions": "Preheat the oven. In a bowl, mix Dijon mustard, honey, minced garlic, and lemon juice. Place salmon fillets on a lined baking sheet. Brush with the honey mustard mixture. Bake until the salmon is flaky and the glaze is caramelized.",
