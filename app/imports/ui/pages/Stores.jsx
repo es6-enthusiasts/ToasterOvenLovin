@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Vendors } from '../../api/vendors/Vendors';
-import VendorWithEdit from '../components/VendorWithEdit';
+import Vendor from '../components/Vendor';
 
 /* Renders cards for every vendor the user owns, unlike the list vendors this page will allow the user to edit their stores with an additional edit button */
 const Stores = () => {
@@ -34,7 +34,7 @@ const Stores = () => {
           </Col>
           <br />
           <Row xs={1} md={2} lg={3} className="g-4">
-            {vendors.map((vendor) => (<Col key={vendor._id}><VendorWithEdit vendor={vendor} /></Col>))}
+            {vendors.map((vendor) => (<Col key={vendor._id}><Vendor vendor={vendor} /></Col>))}
           </Row>
         </Col>
       </Row>
