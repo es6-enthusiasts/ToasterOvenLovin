@@ -1,50 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import RecipeModal from './RecipeModal';
+import { useTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
+const RecipeCard = ({ recipe }) => {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
-const RecipeCard = ({ recipe }) => (
-  <Card className="card recipe color2 pt-4 text-center h-100">
-    <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
-    <Card.Body>
-      <Card.Title>{recipe.dishName}</Card.Title>
-      <Card.Text>{recipe.description}</Card.Text>
-
-      <Card.Title>Ingredients</Card.Title>
-      <ul style={{ listStyleType: 'circle', textAlign: 'left' }}>
-        {recipe.ingredients.split(', ').map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
-
-      <Card.Title>Equipment</Card.Title>
-      <ul style={{ listStyleType: 'circle', textAlign: 'left' }}>
-        {recipe.equipment.split(', ').map((equipment, index) => (
-          <li key={index}>{equipment}</li>
-        ))}
-      </ul>
-
-      <Card.Title>Instructions</Card.Title>
-      <Card.Text>{recipe.instructions}</Card.Text>
-
-      <Card.Title>Dietary Restriction</Card.Title>
-      <Card.Text>{recipe.dietaryRestriction}</Card.Text>
-
-      <Card.Title>Cost Per Serving</Card.Title>
-      <Card.Text>{recipe.costPerServing}</Card.Text>
-
-      <Card.Title>Number of Servings</Card.Title>
-      <Card.Text>{recipe.noServings}</Card.Text>
-
-      <Card.Title>Time to Make</Card.Title>
-      <Card.Text>{recipe.timeToMake}</Card.Text>
-
+    const { currentUser } = useTracker(() => ({
+        currentUser: Meteor.user() ? Meteor.user().username : '',
+    }), []);
+  const selectiveEdit = () => {
+      if(currentUser == recipe.owner)
+      {
+          return(
       <Link to={`/edit/${recipe._id}`}>
         <Button variant="primary">Edit</Button>
       </Link>
-    </Card.Body>
-  </Card>
-);
+          );
+      }
+      else if(Roles.userIsInRole(Meteor.userId(), 'admin'))
+      {
+          return(
+              <div>
+              <Link to={`/edit/${recipe._id}`}>
+                  <Button variant="primary">Edit</Button>
+              </Link>
+                  <br/>
+                  <br/>
+                  <strong>Owned by {recipe.owner}</strong>
+              </div>
+
+
+          );
+      }
+  };
+  return (
+    <Card className="card recipe color2 pt-4 text-center h-100">
+      <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
+      <Card.Body>
+        <Card.Title>{recipe.dishName}</Card.Title>
+        <Card.Text>{recipe.description}</Card.Text>
+        <Card.Title>Ingredients</Card.Title>
+        <ul>
+          {recipe.ingredients.split(', ').map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <Button variant="primary" onClick={handleShow}>View Recipe</Button>
+          <br/><br/>
+          {selectiveEdit()}
+          <RecipeModal recipe={recipe} visibility={show} onClose={handleClose} canEdit={selectiveEdit}/>
+      </Card.Body>
+    </Card>
+  );
+};
 
 RecipeCard.propTypes = {
   recipe: PropTypes.shape({

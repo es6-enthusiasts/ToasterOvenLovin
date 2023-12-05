@@ -17,8 +17,7 @@ class VendorsCollection {
       location: String,
       storeHours: String,
       owner: String,
-      ingredients: Array,
-      'ingredients.$': String,
+      ingredients: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
