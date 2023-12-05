@@ -1,10 +1,11 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Vendors } from '../../api/vendors/Vendors';
 import Vendor from '../components/Vendor';
+import { Link } from 'react-router-dom';
 
 /* Renders cards for every vendor the user owns, unlike the list vendors this page will allow the user to edit their stores with an additional edit button */
 const Stores = () => {
@@ -31,6 +32,9 @@ const Stores = () => {
         <Col>
           <Col className="text-center  bg-white p-3 rounded">
             <h2>Your Vendors</h2>
+            <Link to="/addStore">
+              <Button id="add-store" variant="primary">Add New Store</Button>
+            </Link>
           </Col>
           <br />
           <Row xs={1} md={2} lg={3} className="g-4">
