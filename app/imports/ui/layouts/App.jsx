@@ -23,6 +23,7 @@ import Stores from '../pages/Stores';
 import StoresAdmin from '../pages/StoresAdmin';
 import EditStore from '../pages/EditStore';
 import AddStore from '../pages/AddStore';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/signout" element={<EditProfile />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/Stores" element={<VendorProtectedRoute ready={ready}><Stores /></VendorProtectedRoute>} />
           <Route path="/StoresAdmin" element={<AdminProtectedRoute ready={ready}><StoresAdmin /></AdminProtectedRoute>} />

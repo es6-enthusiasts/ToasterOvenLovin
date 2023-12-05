@@ -81,6 +81,11 @@ const TopMenu = () => {
             </NavDropdown>
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
+              <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/editProfile">
+                <BoxArrowRight />
+                {' '}
+                Edit Profile
+              </NavDropdown.Item>
               <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                 <BoxArrowRight />
                 {' '}
@@ -89,6 +94,7 @@ const TopMenu = () => {
               </NavDropdown.Item>
             </NavDropdown>
           )}
+
         </Nav>
       </Container>
     </Navbar>
