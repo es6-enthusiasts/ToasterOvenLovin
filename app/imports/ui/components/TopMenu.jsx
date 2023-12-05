@@ -5,6 +5,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Profiles } from '../../api/profiles/Profiles';
+import LoadingSpinner from './LoadingSpinner';
 
 const navContent = function (User) {
   let retVal;
@@ -55,7 +57,23 @@ const TopMenu = () => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
 
-  return (
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { ready, profiles } = useTracker(() => {
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to Recipe documents.
+    const subscription = Meteor.subscribe(Profiles.generalPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the Recipe documents
+    const profileItems = Profiles.collection.find({}).fetch();
+    return {
+      profiles: profileItems,
+      ready: rdy,
+    };
+  }, []);
+
+  return (ready ? (
     <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
         <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" width="40px" /></Navbar.Brand>
@@ -76,7 +94,7 @@ const TopMenu = () => {
             </NavDropdown>
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
-              <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/editProfile">
+              <NavDropdown.Item id="navbar-sign-out" as={NavLink} to={`/edit/${profiles._id}`}>
                 <BoxArrowRight />
                 {' '}
                 Edit Profile
@@ -93,7 +111,7 @@ const TopMenu = () => {
         </Nav>
       </Container>
     </Navbar>
-  );
+  ) : <LoadingSpinner />);
 };
 
 export default TopMenu;
