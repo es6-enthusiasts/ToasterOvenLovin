@@ -62,11 +62,18 @@ body {
 {
   padding: 1.5em;
 }
-.card.recipe, .card.store{
+.card.recipe, .card.store, .card.signin {
   background-color: var(--color2);
   padding: 1em;
   margin-bottom: 1em;
 }
+
+#signin-form-email, #signin-form-password, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time {
+  background-color: var(--color2);
+}
+
+
+
 .card ul
 {
   list-style-type: none;
@@ -138,10 +145,6 @@ background-image: url("https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3
 {
   border-radius: 25%;
   max-height: 5em;
-}
-
-.form-control.search {
-  background-color: #F2F2F2;
 }
 
 h1 {

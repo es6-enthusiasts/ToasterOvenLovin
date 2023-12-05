@@ -14,7 +14,7 @@ const Login = () => {
   };
 
   return (
-    <div id="Login" className="color2 padded" style={{ width: '300px', margin: 'auto' }}>
+    <div id="Login" className="padded" style={{ width: '300px', margin: 'auto' }}>
       <h2 className="text-center">Login</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">

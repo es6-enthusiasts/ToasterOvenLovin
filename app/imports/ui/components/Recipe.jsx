@@ -1,42 +1,43 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
-import RecipeModal from './RecipeModal';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
+import RecipeModal from './RecipeModal';
+
 const RecipeCard = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-    const { currentUser } = useTracker(() => ({
-        currentUser: Meteor.user() ? Meteor.user().username : '',
-    }), []);
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
   const selectiveEdit = () => {
-      if(currentUser == recipe.owner)
-      {
-          return(
-      <Link to={`/edit/${recipe._id}`}>
-        <Button variant="primary">Edit</Button>
-      </Link>
-          );
-      }
-      else if(Roles.userIsInRole(Meteor.userId(), 'admin'))
-      {
-          return(
-              <div>
-              <Link to={`/edit/${recipe._id}`}>
-                  <Button variant="primary">Edit</Button>
-              </Link>
-                  <br/>
-                  <br/>
-                  <strong>Owned by {recipe.owner}</strong>
-              </div>
+    let retval = '';
+    if (currentUser === recipe.owner) {
+      retval = (
+        <Link to={`/edit/${recipe._id}`}>
+          <Button variant="primary">Edit</Button>
+        </Link>
+      );
+    }
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      retval = (
+        <div>
+          <Link to={`/edit/${recipe._id}`}>
+            <Button variant="primary">Edit</Button>
+          </Link>
+          <br />
+          <br />
+          <strong>Owned by {recipe.owner}</strong>
+        </div>
 
-
-          );
-      }
+      );
+    }
+    return retval;
   };
   return (
     <Card className="card recipe color2 pt-4 text-center h-100">
@@ -51,9 +52,9 @@ const RecipeCard = ({ recipe }) => {
           ))}
         </ul>
         <Button variant="primary" onClick={handleShow}>View Recipe</Button>
-          <br/><br/>
-          {selectiveEdit()}
-          <RecipeModal recipe={recipe} visibility={show} onClose={handleClose} canEdit={selectiveEdit}/>
+        <br /><br />
+        {selectiveEdit()}
+        <RecipeModal recipe={recipe} visibility={show} onClose={handleClose} canEdit={selectiveEdit} />
       </Card.Body>
     </Card>
   );

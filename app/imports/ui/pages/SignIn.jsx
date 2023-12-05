@@ -48,16 +48,16 @@ const SignIn = () => {
             <h2>Login to your account</h2>
           </Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-            <Card>
+            <Card className="card signin">
               <Card.Body>
-                <TextField id="signin-form-email" name="email" placeholder="E-mail address" />
+                <TextField className="signin" id="signin-form-email" name="email" placeholder="E-mail address" />
                 <TextField id="signin-form-password" name="password" placeholder="Password" type="password" />
                 <ErrorsField />
                 <SubmitField id="signin-form-submit" />
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="light">
+          <Alert variant="light" className="text-center">
             <Link to="/signup">Click here to Register</Link>
           </Alert>
           {error === '' ? (
