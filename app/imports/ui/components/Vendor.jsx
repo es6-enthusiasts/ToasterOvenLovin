@@ -19,7 +19,7 @@ const Vendor = ({ vendor }) => {
       retval = (
         <div className="d-flex justify-content-center mt-3">
           <Button variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
-            EditLink
+            Edit
           </Button>
         </div>
       );
