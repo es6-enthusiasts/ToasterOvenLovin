@@ -21,6 +21,8 @@ import AddRecipe from '../pages/AddRecipe';
 import EditRecipe from '../pages/EditRecipe';
 import Stores from '../pages/Stores';
 import EditStore from '../pages/EditStore';
+import AddStore from '../pages/AddStore';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -40,6 +42,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/signout" element={<EditProfile />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/Stores" element={<VendorProtectedRoute ready={ready}><Stores /></VendorProtectedRoute>} />
           <Route path="/editVendor/:_id" element={<VendorProtectedRoute ready={ready}><EditStore /></VendorProtectedRoute>} />
@@ -47,6 +50,7 @@ const App = () => {
           <Route path="/listRecipes" element={<ListRecipes />} />
           <Route path="/edit/:_id" element={<StudentProtectedRoute ready={ready}><EditRecipe /></StudentProtectedRoute>} />
           <Route path="/addRecipe" element={<StudentProtectedRoute ready={ready}><AddRecipe /></StudentProtectedRoute>} />
+          <Route path="/addStore" element={<VendorProtectedRoute ready={ready}><AddStore /></VendorProtectedRoute>} />
           <Route path="/community" element={<Community />} />
           <Route path="/cookbook" element={<StudentProtectedRoute ready={ready}><Cookbook /></StudentProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
