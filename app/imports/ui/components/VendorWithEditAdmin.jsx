@@ -23,7 +23,7 @@ const VendorWithEditAdmin = ({ vendor }) => (
         <Col md={6}>
           <Card.Text>
             <ul style={{ listStyleType: 'circle' }}>
-              {vendor.ingredients.split(', ').slice(0, Math.ceil(vendor.ingredients.length / 2)).map((ingredient, index) => (
+              {vendor.ingredients.split(', ').slice(0, Math.ceil(vendor.ingredients.split(', ').length / 2)).map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
@@ -32,7 +32,7 @@ const VendorWithEditAdmin = ({ vendor }) => (
         <Col md={6}>
           <Card.Text>
             <ul style={{ listStyleType: 'circle' }}>
-              {vendor.ingredients.split(', ').slice(Math.ceil(vendor.ingredients.length / 2)).map((ingredient, index) => (
+              {vendor.ingredients.split(', ').slice(Math.ceil(vendor.ingredients.split(', ').length / 2)).map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
