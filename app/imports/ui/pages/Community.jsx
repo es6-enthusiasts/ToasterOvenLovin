@@ -7,6 +7,7 @@ import AccountCard from '../components/Account';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Profiles } from '../../api/profiles/Profiles';
 
+
 /* A simple static component to render some text for the landing page. */
 const Community = () => {
 // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker

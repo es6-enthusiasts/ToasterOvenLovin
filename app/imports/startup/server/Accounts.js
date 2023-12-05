@@ -10,6 +10,7 @@ const createUser = (email, password, role) => {
     username: email,
     email: email,
     password: password,
+    role: role,
   });
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
@@ -18,6 +19,10 @@ const createUser = (email, password, role) => {
   if (role === 'vendor') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'vendor');
+  }
+  if (role === 'student') {
+    Roles.createRole(role, { unlessExists: true });
+    Roles.addUsersToRoles(userID, 'student');
   }
 };
 
