@@ -8,7 +8,7 @@
   --color1: #B9D16E;
   --color2: #F2F2F2;
   --color3: #F2BC57;
-  --color4: #3F4726;
+  --color4: #28590C;
   --color5: #F2E8CF;
   --color5lt: #956F4E;
   --color5dk: #512b0a;
@@ -51,9 +51,9 @@ body {
 .color3 {background-color: var(--color3);}
 .color4 {background-color: var(--color4);}
 .color5 {background-color: var(--color5);}
-.accent1{background-color: #DC1E0B;}
-.accent2{background-color: #97BE11;}
-.accent3{background-color:  #28590C;}
+.accent1{background-color: var(--color3);}
+.accent2{background-color: var(--color1);}
+.accent3{background-color:  var(--color4);}
 #Login
 {
 
@@ -70,6 +70,7 @@ body {
 .card ul
 {
   list-style-type: none;
+  padding: 0;
 }
 .cardImg
 {
@@ -109,7 +110,7 @@ a.nav-link:active
 .unslant
 {
   transform: skew(30deg);
-  min-height:500px;
+  /*min-height:500px;*/
 }
 
 .slide1
@@ -151,4 +152,9 @@ h1 {
 {
   border-radius: 100%;
   aspect-ratio: 1/1;
+}
+
+.carousel-caption.text {
+  top: 38%;
+  left: 40%;
 }
