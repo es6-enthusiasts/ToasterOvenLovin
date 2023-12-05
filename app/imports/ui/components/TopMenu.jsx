@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 import { Profiles } from '../../api/profiles/Profiles';
 import LoadingSpinner from './LoadingSpinner';
+import { Vendors } from '../../api/vendors/Vendors';
 
 const navContent = function (User) {
   let retVal;
@@ -59,6 +60,7 @@ const TopMenu = () => {
 
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, profiles } = useTracker(() => {
+
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Recipe documents.
@@ -66,7 +68,7 @@ const TopMenu = () => {
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Recipe documents
-    const profileItems = Profiles.collection.find({}).fetch();
+    const profileItems = Profiles.collection.findOne(_id);
     return {
       profiles: profileItems,
       ready: rdy,
