@@ -32,7 +32,6 @@ const App = () => {
       ready: rdy,
     };
   });
-  console.log(ready);
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">

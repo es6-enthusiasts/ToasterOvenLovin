@@ -49,7 +49,6 @@ const EditProfile = () => {
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
-  console.log;
   return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
