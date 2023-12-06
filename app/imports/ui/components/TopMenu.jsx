@@ -17,40 +17,35 @@ const navContent = function (User) {
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
+  } else if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+    retVal = (
+      <Nav className="mx-auto pt-auto">
+        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
+      </Nav>
+    );
+  } else if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
+    retVal = (
+      <Nav className="mx-auto pt-auto">
+        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link href="/Stores">My Stores</Nav.Link>
+        <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
+      </Nav>
+    );
   } else {
-    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
-      retVal = (
-        <Nav className="mx-auto pt-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
-        </Nav>
-      );
-    }
-    if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
-      retVal = (
-        <Nav className="mx-auto pt-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link href="/Stores">My Stores</Nav.Link>
-          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
-        </Nav>
-      );
-    } else {
-      retVal = (
-        <Nav className="mx-auto pt-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
-          <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-          <Nav.Link id="cookbook-nav" href="/Cookbook">My Cookbook</Nav.Link>
-          <Nav.Link href="/listIngredients">Ingredients</Nav.Link>
-          <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
-        </Nav>
-      );
-    }
+    retVal = (
+      <Nav className="mx-auto pt-auto">
+        <Nav.Link href="/home">Home</Nav.Link>
+        <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link id="cookbook-nav" href="/Cookbook">My Cookbook</Nav.Link>
+        <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
+      </Nav>
+    );
   }
   return retVal;
 };

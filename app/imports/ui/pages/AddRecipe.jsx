@@ -74,7 +74,7 @@ const AddRecipe = () => {
         <Col xs={10}>
           <Col className="text-center"><h2>Add Recipe</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
+            <Card className="card recipe">
               <Card.Body>
                 <Row>
                   <Col><TextField id="add-recipe-name" name="dishName" /></Col>
