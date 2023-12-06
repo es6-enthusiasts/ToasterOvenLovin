@@ -12,8 +12,8 @@ const navContent = function (User) {
     retVal = (
       <Nav className="mx-auto pt-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link id="vendor-nav" href="/listRecipes">Recipes</Nav.Link>
-        <Nav.Link href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
@@ -32,7 +32,7 @@ const navContent = function (User) {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/Stores">My Stores</Nav.Link>
+        <Nav.Link id="stores-nav" href="/Stores">My Stores</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
@@ -76,7 +76,7 @@ const TopMenu = () => {
             </NavDropdown>
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
-              <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/editProfile">
+              <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to="/editProfile">
                 <BoxArrowRight />
                 {' '}
                 Edit Profile

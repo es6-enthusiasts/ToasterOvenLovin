@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
+import { Roles } from 'meteor/alanning:roles';
 import { Recipes } from '../../api/recipe/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -19,7 +20,12 @@ const EditRecipe = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Recipe documents.
-    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    let subscription = '';
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      subscription = Meteor.subscribe(Recipes.adminPublicationName);
+    } else {
+      subscription = Meteor.subscribe(Recipes.userPublicationName);
+    }
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the document
@@ -29,7 +35,6 @@ const EditRecipe = () => {
       ready: rdy,
     };
   }, [_id]);
-  // console.log('EditRecipe', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
     const {
@@ -43,6 +48,7 @@ const EditRecipe = () => {
       costPerServing,
       noServings,
       timeToMake,
+      owner,
     } = data;
     Recipes.collection.update(_id, { $set: {
       dishName,
@@ -55,13 +61,14 @@ const EditRecipe = () => {
       costPerServing,
       noServings,
       timeToMake,
+      owner,
     } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container id="edit-recipe-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Recipe</h2></Col>
@@ -69,22 +76,22 @@ const EditRecipe = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="dishName" /></Col>
-                  <Col><TextField name="image" /></Col>
+                  <Col><TextField id="edit-recipe-name" name="dishName" /></Col>
+                  <Col><TextField id="edit-recipe-image" name="image" /></Col>
                 </Row>
-                <LongTextField name="description" />
+                <LongTextField id="edit-recipe-description" name="description" />
                 <Row>
-                  <Col><TextField name="equipment" /></Col>
-                  <Col><TextField name="ingredients" /></Col>
+                  <Col><TextField id="edit-recipe-equipment" name="equipment" /></Col>
+                  <Col><TextField id="edit-recipe-ingredients" name="ingredients" /></Col>
                 </Row>
-                <LongTextField name="instructions" />
+                <LongTextField id="edit-recipe-instructions" name="instructions" />
                 <Row>
-                  <Col><TextField name="dietaryRestriction" /></Col>
-                  <Col><TextField name="costPerServing" /></Col>
-                  <Col><TextField name="noServings" /></Col>
-                  <Col><TextField name="timeToMake" /></Col>
+                  <Col><TextField id="edit-recipe-restrictions" name="dietaryRestriction" /></Col>
+                  <Col><TextField id="edit-recipe-cost" name="costPerServing" /></Col>
+                  <Col><TextField id="edit-recipe-servings" name="noServings" /></Col>
+                  <Col><TextField id="edit-recipe-time" name="timeToMake" /></Col>
                 </Row>
-                <SubmitField value="Submit" />
+                <SubmitField id="edit-recipe-submit" value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" />
               </Card.Body>

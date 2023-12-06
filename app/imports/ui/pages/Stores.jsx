@@ -2,10 +2,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Vendors } from '../../api/vendors/Vendors';
 import Vendor from '../components/Vendor';
-import { Link } from 'react-router-dom';
 
 /* Renders cards for every vendor the user owns, unlike the list vendors this page will allow the user to edit their stores with an additional edit button */
 const Stores = () => {
@@ -27,7 +27,7 @@ const Stores = () => {
 
   // Now that we have the vendor data, we can render the cards, note that this is the same as list vendors except it uses VendorWithEdit instead of Vendor so there is an edit button
   return (ready ? (
-    <Container className="py-3">
+    <Container id="mystores-page" className="py-3">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center  bg-white p-3 rounded">
