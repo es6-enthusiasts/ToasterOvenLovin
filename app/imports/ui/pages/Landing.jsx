@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 // import Banner from '../components/Banner';
 import RandomRecipes from '../components/RandomRecipes';
 import InfoCarousel from '../components/InfoCarousel';
-import { Link } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (

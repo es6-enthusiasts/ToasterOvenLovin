@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe }) => {
     if (currentUser === recipe.owner) {
       retval = (
         <Link to={`/edit/${recipe._id}`}>
-          <Button variant="primary">Edit</Button>
+          <Button id="edit-recipe" variant="primary">Edit</Button>
         </Link>
       );
     }
@@ -28,7 +28,7 @@ const RecipeCard = ({ recipe }) => {
       retval = (
         <div>
           <Link to={`/edit/${recipe._id}`}>
-            <Button variant="primary">Edit</Button>
+            <Button id="edit-recipe" variant="primary">Edit</Button>
           </Link>
           <br />
           <br />

@@ -18,7 +18,7 @@ const Vendor = ({ vendor }) => {
     if (currentUser === vendor.owner) {
       retval = (
         <div className="d-flex justify-content-center mt-3">
-          <Button variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
+          <Button id="edit-store" variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
             Edit
           </Button>
         </div>
@@ -30,7 +30,7 @@ const Vendor = ({ vendor }) => {
           <br />
           <footer className="blockquote-footer">{vendor.owner}</footer>
           <div className="d-flex justify-content-center mt-3">
-            <Button variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
+            <Button id="edit-store" variant="primary" as={Link} to={`/editVendor/${vendor._id}`}>
               Edit
             </Button>
           </div>

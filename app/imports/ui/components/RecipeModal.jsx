@@ -1,33 +1,32 @@
 import React from 'react';
 import { Row, Col, Button, Modal, Image, ModalTitle } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const RecipeModal = ({ recipe, visibility, onClose , canEdit}) => (
+const RecipeModal = ({ recipe, visibility, onClose, canEdit }) => (
   <Modal size="lg" show={visibility}>
     <Modal.Header className="color2 text-center">
       <ModalTitle>{recipe.dishName}</ModalTitle>
     </Modal.Header>
     <Modal.Body className="color2">
       <Row>
-        <Col  xs={4}>
-      <Image className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
+        <Col xs={4}>
+          <Image className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
         </Col>
-          <Col xs={4}><strong>Ingredients</strong>
-            <ul style={{ listStyleType: 'circle' }}>
-              {recipe.ingredients.split(', ').map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-          </Col>
-          <Col xs={4}>
-            <strong>Equipment</strong>
-            <ul style={{ listStyleType: 'circle' }}>
-              {recipe.equipment.split(', ').map((equipment, index) => (
-                  <li key={index}>{equipment}</li>
-              ))}
-            </ul>
-          </Col>
+        <Col xs={4}><strong>Ingredients</strong>
+          <ul style={{ listStyleType: 'circle' }}>
+            {recipe.ingredients.split(', ').map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+        </Col>
+        <Col xs={4}>
+          <strong>Equipment</strong>
+          <ul style={{ listStyleType: 'circle' }}>
+            {recipe.equipment.split(', ').map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </Col>
       </Row>
       <Row>
         <strong>Description:</strong>
@@ -54,13 +53,13 @@ const RecipeModal = ({ recipe, visibility, onClose , canEdit}) => (
         <strong>Dietary Restriction</strong>
         <p>{recipe.dietaryRestriction}</p>
       </Row>
-      <Row className={"text-center"}>
+      <Row className="text-center">
         <div>
-        <Button variant="secondary" size="sm" onClick={onClose}>
-          Exit
-        </Button>
-          <br/>
-          <br/>
+          <Button variant="secondary" size="sm" onClick={onClose}>
+            Exit
+          </Button>
+          <br />
+          <br />
           {canEdit()}
         </div>
       </Row>
@@ -86,6 +85,12 @@ RecipeModal.propTypes = {
   visibility: PropTypes.bool,
   onClose: PropTypes.func,
   canEdit: PropTypes.func,
+};
+
+RecipeModal.defaultProps = {
+  visibility: () => {}, // Add an appropriate default function or value
+  onClose: () => {}, // Add an appropriate default function or value
+  canEdit: () => {}, // Add an appropriate default function or value
 };
 
 export default RecipeModal;

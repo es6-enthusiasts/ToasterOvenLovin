@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
+import { Roles } from 'meteor/alanning:roles';
 import { Vendors } from '../../api/vendors/Vendors';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -18,7 +19,12 @@ const EditStore = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Vendors documents.
-    const subscription = Meteor.subscribe(Vendors.userPublicationName);
+    let subscription = '';
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      subscription = Meteor.subscribe(Vendors.adminPublicationName);
+    } else {
+      subscription = Meteor.subscribe(Vendors.userPublicationName);
+    }
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the document
@@ -52,7 +58,7 @@ const EditStore = () => {
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container id="edit-store-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Store Profile</h2></Col>
@@ -60,13 +66,13 @@ const EditStore = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="storeName" /></Col>
-                  <Col><TextField name="image" /></Col>
+                  <Col><TextField id="edit-store-name" name="storeName" /></Col>
+                  <Col><TextField id="edit-store-image" name="image" /></Col>
                 </Row>
-                <LongTextField name="location" />
-                <LongTextField name="storeHours" />
-                <LongTextField name="ingredients" />
-                <SubmitField value="Submit" />
+                <LongTextField id="edit-store-location" name="location" />
+                <LongTextField id="edit-store-hours" name="storeHours" />
+                <LongTextField id="edit-store-ingredients" name="ingredients" />
+                <SubmitField id="edit-store-submit" value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" />
               </Card.Body>
