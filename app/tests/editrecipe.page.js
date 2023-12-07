@@ -1,8 +1,9 @@
 import { Selector } from 'testcafe';
+// import { navBar } from './navbar.component';
 
-class EditStorePage {
+class EditRecipePage {
   constructor() {
-    this.pageId = '#edit-store-page';
+    this.pageId = '#edit-recipe-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -14,13 +15,13 @@ class EditStorePage {
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
   async editRecipe(testController) {
     // Data for form
-    const name = `new-store-name-${new Date().getTime()}`;
+    const name = `new-recipe-name-${new Date().getTime()}`;
 
-    await testController.typeText('#edit-store-name', name);
+    await testController.typeText('#edit-recipe-name', name);
 
-    await testController.click('#edit-store-submit input.btn.btn-primary');
+    await testController.click('#edit-recipe-submit input.btn.btn-primary');
     await testController.click(Selector('.swal-button--confirm'));
   }
 }
 
-export const editStorePage = new EditStorePage();
+export const editRecipePage = new EditRecipePage();

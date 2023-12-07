@@ -5,9 +5,6 @@ import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
-import { Profiles } from '../../api/profiles/Profiles';
-import LoadingSpinner from './LoadingSpinner';
-import { Vendors } from '../../api/vendors/Vendors';
 
 const navContent = function (User) {
   let retVal;
@@ -15,8 +12,8 @@ const navContent = function (User) {
     retVal = (
       <Nav className="mx-auto pt-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link id="vendor-nav" href="/listRecipes">Recipes</Nav.Link>
-        <Nav.Link href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
+        <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
@@ -35,7 +32,7 @@ const navContent = function (User) {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link href="/Stores">My Stores</Nav.Link>
+        <Nav.Link id="stores-nav" href="/Stores">My Stores</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
@@ -58,24 +55,7 @@ const TopMenu = () => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
 
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, profiles } = useTracker(() => {
-
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Recipe documents.
-    const subscription = Meteor.subscribe(Profiles.generalPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Recipe documents
-    const profileItems = Profiles.collection.findOne(_id);
-    return {
-      profiles: profileItems,
-      ready: rdy,
-    };
-  }, []);
-
-  return (ready ? (
+  return (
     <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
         <Navbar.Brand href="/home"><Image className="bannerLogo" src="images/toastlogo.png" alt="logo" width="40px" /></Navbar.Brand>
@@ -96,7 +76,7 @@ const TopMenu = () => {
             </NavDropdown>
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
-              <NavDropdown.Item id="navbar-sign-out" as={NavLink} to={`/edit/${profiles._id}`}>
+              <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to="/editProfile">
                 <BoxArrowRight />
                 {' '}
                 Edit Profile
@@ -113,7 +93,7 @@ const TopMenu = () => {
         </Nav>
       </Container>
     </Navbar>
-  ) : <LoadingSpinner />);
+  );
 };
 
 export default TopMenu;
