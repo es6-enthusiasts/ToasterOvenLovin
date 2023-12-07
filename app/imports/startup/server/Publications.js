@@ -69,7 +69,7 @@ Meteor.publish(Recipes.adminPublicationName, function () {
   return this.ready();
 });
 Meteor.publish(Profiles.generalPublicationName, function () {
-  return Profiles.collection.find({});
+  return Profiles.collection.find();
 });
 Meteor.publish(Profiles.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {

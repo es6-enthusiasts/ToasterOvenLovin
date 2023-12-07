@@ -32,7 +32,6 @@ const App = () => {
       ready: rdy,
     };
   });
-  console.log(ready);
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
@@ -42,7 +41,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/signout" element={<EditProfile />} />
+          <Route path="/editProfile/:_id" element={<EditProfile />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/Stores" element={<VendorProtectedRoute ready={ready}><Stores /></VendorProtectedRoute>} />
           <Route path="/editVendor/:_id" element={<VendorProtectedRoute ready={ready}><EditStore /></VendorProtectedRoute>} />
