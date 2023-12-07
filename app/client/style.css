@@ -68,7 +68,7 @@ body {
   margin-bottom: 1em;
 }
 
-#signin-form-email, #signin-form-password, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time, #add-store-name, #add-store-image, #add-store-location, #add-store-hours, #add-store-ingredients {
+#signin-form-email, #signin-form-password, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time, #add-store-name, #add-store-image, #add-store-location, #add-store-hours, #add-store-ingredients, #signup-form-email, #signup-form-password, #signup-form-role {
   background-color: var(--color2);
 }
 
