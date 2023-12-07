@@ -27,6 +27,10 @@ const ListRecipes = () => {
     <Container id="recipes-page" className="py-3">
       <Row className="justify-content-center">
         <Col md={10}>
+          <Col className="text-center  bg-white p-3 rounded">
+            <h2>Recipes</h2>
+          </Col>
+          <br />
           <Row xs={1} md={2} lg={3} className="g-4">
             {recipes.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
           </Row>
