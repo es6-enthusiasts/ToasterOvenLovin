@@ -52,7 +52,7 @@ const SignUp = ({ location }) => {
             <h2>Register your account</h2>
           </Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-            <Card>
+            <Card id="signup-card">
               <Card.Body>
                 <TextField name="email" id="signup-form-email" placeholder="E-mail address" />
                 <TextField name="password" id="signup-form-password" placeholder="Password" type="password" />

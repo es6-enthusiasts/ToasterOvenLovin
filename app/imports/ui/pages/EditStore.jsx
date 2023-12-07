@@ -63,7 +63,7 @@ const EditStore = () => {
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Store Profile</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
-            <Card>
+            <Card id="edit-store-card">
               <Card.Body>
                 <Row>
                   <Col><TextField id="edit-store-name" name="storeName" /></Col>

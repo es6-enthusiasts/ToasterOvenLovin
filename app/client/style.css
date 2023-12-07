@@ -68,7 +68,7 @@ body {
   margin-bottom: 1em;
 }
 
-#signin-form-email, #signin-form-password, #signup-form-email, #signup-form-password, #signup-form-role, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time, #add-store-name, #add-store-image, #add-store-location, #add-store-hours, #add-store-ingredients, #edit-recipe-card, #edit-recipe-name, #edit-recipe-image, #edit-recipe-description, #edit-recipe-equipment, #edit-recipe-ingredients, #edit-recipe-instructions, #edit-recipe-restrictions, #edit-recipe-cost, #edit-recipe-servings, #edit-recipe-time {
+#signin-form-email, #signin-form-password, #signup-card, #signup-form-email, #signup-form-password, #signup-form-role, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time, #add-store-name, #add-store-image, #add-store-location, #add-store-hours, #add-store-ingredients, #edit-recipe-card, #edit-recipe-name, #edit-recipe-image, #edit-recipe-description, #edit-recipe-equipment, #edit-recipe-ingredients, #edit-recipe-instructions, #edit-recipe-restrictions, #edit-recipe-cost, #edit-recipe-servings, #edit-recipe-time, #edit-store-card, #edit-store-name, #edit-store-image, #edit-store-location, #edit-store-hours, #edit-store-ingredients  {
   background-color: var(--color2);
 }
 
