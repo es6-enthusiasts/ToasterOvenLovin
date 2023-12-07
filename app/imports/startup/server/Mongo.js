@@ -33,14 +33,14 @@ if (Vendors.collection.find().count() === 0) {
 }
 
 const addRecipe = (data) => {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(`  Adding recipes for ${data.owner}`);
   Recipes.collection.insert(data);
 };
 
-// Initialize the StuffsCollection if empty.
+// Initialize the RecipesCollection if empty.
 if (Recipes.collection.find().count() === 0) {
   if (Meteor.settings.defaultRecipes) {
-    console.log('Creating default data.');
+    console.log('Creating default recipes.');
     Meteor.settings.defaultRecipes.forEach(data => addRecipe(data));
 
   }
@@ -50,10 +50,10 @@ const addProfile = (data) => {
   Profiles.collection.insert(data);
 };
 
-// Initialize the StuffsCollection if empty.
+// Initialize the ProfilesCollection if empty.
 if (Profiles.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfiles) {
-    console.log('Creating default data.');
+    console.log('Creating default profiles.');
     Meteor.settings.defaultProfiles.forEach(data => addProfile(data));
 
   }

@@ -19,9 +19,14 @@ const RecipeCard = ({ recipe }) => {
     let retval = '';
     if (currentUser === recipe.owner) {
       retval = (
-        <Link to={`/edit/${recipe._id}`}>
-          <Button id="edit-recipe" variant="primary">Edit</Button>
-        </Link>
+        <div>
+          <Link to={`/edit/${recipe._id}`}>
+            <Button id="edit-recipe" variant="primary">Edit</Button>
+          </Link>
+          <br />
+          <br />
+          <Button id="delete-recipe" variant="danger">Delete</Button>
+        </div>
       );
     }
     if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
@@ -30,6 +35,9 @@ const RecipeCard = ({ recipe }) => {
           <Link to={`/edit/${recipe._id}`}>
             <Button id="edit-recipe" variant="primary">Edit</Button>
           </Link>
+          <br />
+          <br />
+          <Button id="delete-recipe" variant="danger">Delete</Button>
           <br />
           <br />
           <strong>Owned by {recipe.owner}</strong>
