@@ -54,7 +54,7 @@ const RecipeCard = ({ recipe }) => {
     return retval;
   };
   return (
-    <Card className="card recipe color2 pt-4 text-center h-100">
+    <Card className="recipe color2 pt-4 text-center h-100">
       <Card.Img className="cardImg" variant="top" src={recipe.image} alt={recipe.dishName} />
       <Card.Body>
         <Card.Title>{recipe.dishName}</Card.Title>

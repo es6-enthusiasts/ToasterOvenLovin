@@ -18,13 +18,11 @@
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
   margin: 0;
+  --bs-light-rgb: var(--matr-navbar-bg-rgb);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-size: cover;
-  background-repeat: repeat-y;
-  --bs-body-bg: var(--matr-navbar-bg);
+  background-color: var(--color5) !important;
   --bs-body-font-family: 'DM Sans', sans-serif; /* Use 'DM Sans' as the font-family */
 }
 
@@ -47,33 +45,23 @@ body {
 }
 
 .color1 {background-color: var(--color1);}
-.color2 { background-color: var(--color2);}
+.color2 {background-color: var(--color2);}
 .color3 {background-color: var(--color3);}
 .color4 {background-color: var(--color4);}
 .color5 {background-color: var(--color5);}
 .accent1{background-color: var(--color3);}
 .accent2{background-color: var(--color1);}
 .accent3{background-color:  var(--color4);}
-#Login
-{
 
-}
 .padded
 {
   padding: 1.5em;
 }
-.card.recipe, .card.store, .card.signin {
-  background-color: var(--color2);
+.card {
   padding: 1em;
   margin-bottom: 1em;
+  background-color: var(--color2) !important;
 }
-
-#signin-form-email, #signin-form-password, #signup-card, #signup-form-email, #signup-form-password, #signup-form-role, #add-recipe-name, #add-recipe-image, #add-recipe-description, #add-recipe-equipment, #add-recipe-ingredients, #add-recipe-instructions, #add-recipe-restrictions, #add-recipe-cost, #add-recipe-servings, #add-recipe-time, #add-store-name, #add-store-image, #add-store-location, #add-store-hours, #add-store-ingredients, #edit-recipe-card, #edit-recipe-name, #edit-recipe-image, #edit-recipe-description, #edit-recipe-equipment, #edit-recipe-ingredients, #edit-recipe-instructions, #edit-recipe-restrictions, #edit-recipe-cost, #edit-recipe-servings, #edit-recipe-time, #edit-store-card, #edit-store-name, #edit-store-image, #edit-store-location, #edit-store-hours, #edit-store-ingredients  {
-  background-color: var(--color2);
-}
-
-
-
 .card ul
 {
   list-style-type: none;
@@ -138,9 +126,6 @@ background-image: url("https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3
   background-repeat: no-repeat;
 
 }
-.blurbImg {
-          border-radius: 100%;
-        }
 .bannerLogo
 {
   border-radius: 25%;
@@ -161,3 +146,8 @@ h1 {
   top: 38%;
   left: 40%;
 }
+.page
+{
+  border-radius: 0.375rem;
+}
+
