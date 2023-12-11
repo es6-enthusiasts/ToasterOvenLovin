@@ -739,7 +739,7 @@
       "address": "1234 candyCane Lane",
       "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
       "description": "an adept leader who succeeds everywhere all the time.",
-      "owner" : "John@foo.com"
+      "owner" : "john@foo.com"
     },
     {
       "firstName": "Mary",
@@ -747,7 +747,7 @@
       "address": "1234 candyCane Lane",
       "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
       "description": "an adept leader who succeeds everywhere all the time.",
-      "owner" : "Mary@example.com"
+      "owner" : "mary@example.com"
     },
     {
       "firstName": "Alice",
