@@ -10,7 +10,12 @@
     { "email": "mary@example.com", "password": "changeme", "role": "student"},
     { "email": "alice@bar.com", "password": "changeme", "role": "student"},
     { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "user@foo.com", "password": "changeme", "role": "student" }
+    { "email": "user@foo.com", "password": "changeme", "role": "student" },
+    { "email": "kyla@collegecuisineconnect.site", "password": "changeme", "role": "admin" },
+    { "email": "william@collegecuisineconnect.site", "password": "changeme", "role": "admin"},
+    { "email": "juliette@collegecuisineconnect.site", "password": "changeme", "role": "admin"},
+    { "email": "loelle@collegecuisineconnect.site", "password": "changeme", "role": "admin"},
+    { "email": "janel@collegecuisineconnect.site", "password": "changeme", "role": "vendor" }
   ],
 
   "defaultVendors": [
@@ -685,35 +690,88 @@
       "lastName": "Simmons",
       "address": "1234 candyCane Lane",
       "image": "https://github.com/willjsimmons.png",
-      "description": "an adept leader who succeeds everywhere all the time."
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "william@collegecuisineconnect.site"
     },
     {
       "firstName": "Juliette",
       "lastName": "Raubolt",
       "address": "1234 candyCane Lane",
       "image": "https://github.com/julietteraubolt.png",
-      "description": "an adept leader who succeeds everywhere all the time."
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "juliette@collegecuisineconnect.site"
     },
     {
       "firstName": "Loelle",
       "lastName": "Lam",
       "address": "1234 candyCane Lane",
       "image": "https://github.com/loellelam.png",
-      "description": "an adept leader who succeeds everywhere all the time."
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "loelle@collegecuisineconnect.site"
     },
     {
       "firstName": "Janel",
       "lastName": "Joson",
       "address": "1234 candyCane Lane",
       "image": "https://github.com/janeljo.png",
-      "description": "an adept leader who succeeds everywhere all the time."
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "janel@collegecuisineconnect.site"
     },
     {
       "firstName": "Kyla",
       "lastName": "Lee",
       "address": "1234 candyCane Lane",
       "image": "https://github.com/kyla8.png",
-      "description": "an adept leader who succeeds everywhere all the time."
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "kyla@collegecuisineconnect.site"
+    },
+    {
+      "firstName": "Admi",
+      "lastName": "Nistrator",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "admin@foo.com"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Nathan",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "John@foo.com"
+    },
+    {
+      "firstName": "Mary",
+      "lastName": "Me-Please",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "Mary@example.com"
+    },
+    {
+      "firstName": "Alice",
+      "lastName": "Son",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "alice@bar.com"
+    },
+    {
+      "firstName": "Ven",
+      "lastName": "Door",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "vendor@foo.com"
+    },
+    {
+      "firstName": "You",
+      "lastName": "Zer",
+      "address": "1234 candyCane Lane",
+      "image": "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg",
+      "description": "an adept leader who succeeds everywhere all the time.",
+      "owner" : "user@foo.com"
     }
   ]
 }

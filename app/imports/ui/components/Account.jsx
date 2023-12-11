@@ -25,6 +25,7 @@ AccountCard.propTypes = {
     address: PropTypes.string,
     image: PropTypes.string,
     description: PropTypes.string,
+    owner: PropTypes.string,
   }).isRequired,
 };
 
