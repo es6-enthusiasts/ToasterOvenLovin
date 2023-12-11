@@ -65,7 +65,7 @@ const EditProfile = () => {
                 <Col><TextField name="firstName"/></Col>
                 <Col><TextField name="lastName"/></Col>
               </Row>
-              <LongTextField name="image"/>
+              <TextField name="image"/>
               <Row>
                 <Col><TextField name="address"/></Col>
                 <Col><TextField name="description"/></Col>

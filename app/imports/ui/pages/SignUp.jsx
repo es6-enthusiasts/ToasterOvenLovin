@@ -5,7 +5,9 @@ import { Accounts } from 'meteor/accounts-base';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { AutoForm, ErrorsField, SubmitField, TextField, SelectField } from 'uniforms-bootstrap5';
+import { AutoForm,ErrorsField, SubmitField, TextField, SelectField, HiddenField} from 'uniforms-bootstrap5';
+import swal from "sweetalert";
+import {Profiles} from "../../api/profiles/Profiles";
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -22,6 +24,12 @@ const SignUp = ({ location }) => {
       allowedValues: ['student', 'vendor'],
       defaultValue: 'student',
     },
+    firstName: String,
+    lastName: String,
+    address: String,
+    image: String,
+    description: String,
+
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
@@ -36,6 +44,31 @@ const SignUp = ({ location }) => {
         setRedirectToRef(true);
       }
     });
+    let firstName = doc.firstName;
+    let lastName = doc.lastName;
+    let address = doc.address;
+    let image = doc.image;
+    let description = doc.description;
+    let owner = doc.email;
+
+    Profiles.collection.insert(
+        {
+          firstName,
+          lastName,
+          address,
+          image,
+          description,
+          owner,
+        },
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Recipe added successfully', 'success');
+            formRef.reset();
+          }
+        },
+    );
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
@@ -57,6 +90,15 @@ const SignUp = ({ location }) => {
                 <TextField name="email" id="signup-form-email" placeholder="E-mail address" />
                 <TextField name="password" id="signup-form-password" placeholder="Password" type="password" />
                 <SelectField name="role" id="signup-form-role" placeholder="Role" />
+                <Row>
+                  <Col><TextField name="firstName"/></Col>
+                  <Col><TextField name="lastName"/></Col>
+                </Row>
+                <TextField name="image"/>
+                <Row>
+                  <Col><TextField name="address"/></Col>
+                  <Col><TextField name="description"/></Col>
+                </Row>
                 <ErrorsField />
                 <SubmitField id="signup-form-submit" />
               </Card.Body>
