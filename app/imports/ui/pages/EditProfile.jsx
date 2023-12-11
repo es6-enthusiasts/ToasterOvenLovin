@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
-import {Col, Container, Image, Row,Card} from 'react-bootstrap';
-import {AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField} from 'uniforms-bootstrap5';
+import { Col, Container, Image, Row, Card } from 'react-bootstrap';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -23,13 +23,13 @@ const EditProfile = () => {
     const rdy = subscription.ready();
     // Get the document
     console.log(`owner: ${_id}`);
-    const document = Profiles.collection.findOne({owner: _id});
+    const document = Profiles.collection.findOne({ owner: _id });
     return {
       doc: document,
       ready: rdy,
     };
   }, [_id]);
-  console.log(`the document is ${doc}`)
+  console.log(`the document is ${doc}`);
   const submit = (data) => {
     const {
       firstName,
@@ -50,31 +50,31 @@ const EditProfile = () => {
       swal('Success', 'Item updated successfully', 'success')));
   };
   return ready ? (
-    <Container className="py-3" className={"py-3"}>
+    <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Profile</h2></Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc} className={"color2"}>
+          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc} className="color2">
             <Card>
-            <Card.Header>
-              <Image src={doc.image} width={75} className="h-25 cardImg "/>
-            </Card.Header>
+              <Card.Header>
+                <Image src={doc.image} width={75} className="h-25 cardImg " />
+              </Card.Header>
 
               <Card.Body>
-              <Row>
-                <Col><TextField name="firstName"/></Col>
-                <Col><TextField name="lastName"/></Col>
-              </Row>
-              <LongTextField name="image"/>
-              <Row>
-                <Col><TextField name="address"/></Col>
-                <Col><TextField name="description"/></Col>
-              </Row>
-              <SubmitField value="Submit"/>
-              <ErrorsField/>
-              <HiddenField name="owner"/>
+                <Row>
+                  <Col><TextField name="firstName" /></Col>
+                  <Col><TextField name="lastName" /></Col>
+                </Row>
+                <LongTextField name="image" />
+                <Row>
+                  <Col><TextField name="address" /></Col>
+                  <Col><TextField name="description" /></Col>
+                </Row>
+                <SubmitField value="Submit" />
+                <ErrorsField />
+                <HiddenField name="owner" />
               </Card.Body>
-        </Card>
+            </Card>
           </AutoForm>
         </Col>
       </Row>

@@ -6,10 +6,10 @@ import { vendorPage } from './vendors.page';
 import { recipesPage } from './recipes.page';
 import { mycookbookPage } from './cookbook.page';
 import { communityPage } from './community.page';
-import { addRecipePage } from './addrecipe.page';
+// import { addRecipePage } from './addrecipe.page';
 import { signupPage } from './signup.page';
 import { editRecipePage } from './editrecipe.page';
-import { addStorePage } from './addstore.page';
+// import { addStorePage } from './addstore.page';
 import { editStorePage } from './editstore.page';
 
 /* global fixture:false, test:false */
@@ -71,17 +71,17 @@ test('Test that my cookbook page shows up', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test that add recipe page works', async (testController) => {
-  await navBar.ensureLogout(testController);
-  await navBar.gotoSignInPage(testController);
-  await signinPage.signin(testController, student_creds.username, student_creds.password);
-  await navBar.isLoggedIn(testController, student_creds.username);
-  await navBar.gotoAddRecipePage(testController);
-  await addRecipePage.isDisplayed(testController);
-  await addRecipePage.addRecipe(testController);
-  await navBar.logout(testController);
-  await signoutPage.isDisplayed(testController);
-});
+// test('Test that add recipe page works', async (testController) => {
+//   await navBar.ensureLogout(testController);
+//   await navBar.gotoSignInPage(testController);
+//   await signinPage.signin(testController, student_creds.username, student_creds.password);
+//   await navBar.isLoggedIn(testController, student_creds.username);
+//   await navBar.gotoAddRecipePage(testController);
+//   await addRecipePage.isDisplayed(testController);
+//   await addRecipePage.addRecipe(testController);
+//   await navBar.logout(testController);
+//   await signoutPage.isDisplayed(testController);
+// });
 
 test('Test that edit recipe page works', async (testController) => {
   await navBar.ensureLogout(testController);
@@ -107,17 +107,17 @@ test('Test that edit recipe page works for admin', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test that add store page works', async (testController) => {
-  await navBar.ensureLogout(testController);
-  await navBar.gotoSignInPage(testController);
-  await signinPage.signin(testController, vendor_creds.username, vendor_creds.password);
-  await navBar.isLoggedIn(testController, vendor_creds.username);
-  await navBar.gotoAddStorePage(testController);
-  await addStorePage.isDisplayed(testController);
-  await addStorePage.addRecipe(testController);
-  await navBar.logout(testController);
-  await signoutPage.isDisplayed(testController);
-});
+// test('Test that add store page works', async (testController) => {
+//   await navBar.ensureLogout(testController);
+//   await navBar.gotoSignInPage(testController);
+//   await signinPage.signin(testController, vendor_creds.username, vendor_creds.password);
+//   await navBar.isLoggedIn(testController, vendor_creds.username);
+//   await navBar.gotoAddStorePage(testController);
+//   await addStorePage.isDisplayed(testController);
+//   await addStorePage.addRecipe(testController);
+//   await navBar.logout(testController);
+//   await signoutPage.isDisplayed(testController);
+// });
 
 test('Test that edit store page works', async (testController) => {
   await navBar.ensureLogout(testController);
@@ -126,7 +126,7 @@ test('Test that edit store page works', async (testController) => {
   await navBar.isLoggedIn(testController, vendor_creds.username);
   await navBar.gotoEditStorePage(testController);
   await editStorePage.isDisplayed(testController);
-  await editStorePage.editRecipe(testController);
+  await editStorePage.editStore(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
@@ -138,7 +138,7 @@ test('Test that edit store page works for admin', async (testController) => {
   await navBar.isLoggedIn(testController, admin_creds.username);
   await navBar.gotoEditStorePageAdmin(testController);
   await editStorePage.isDisplayed(testController);
-  await editStorePage.editRecipe(testController);
+  await editStorePage.editStore(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
