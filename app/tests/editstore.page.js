@@ -12,15 +12,28 @@ class EditStorePage {
   }
 
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
-  async editRecipe(testController) {
+  async editStore(testController) {
+    // Capture the initial store name
+    const initialName = await Selector('#edit-store-name').value;
+
     // Data for form
-    const name = `new-store-name-${new Date().getTime()}`;
+    const newName = `new-store-name-${new Date().getTime()}`;
 
-    await testController.typeText('#edit-store-name', name);
+    // Change the store name
+    await testController.click('#edit-store-name');
+    await testController.pressKey('ctrl+a delete');
+    await testController.typeText('#edit-store-name', newName);
+    await testController.click('#edit-store-submit input.btn.btn-primary');
+    await testController.click(Selector('.swal-button--confirm'));
 
+    // Restore the initial store name
+    await testController.click('#edit-store-name');
+    await testController.pressKey('ctrl+a delete');
+    await testController.typeText('#edit-store-name', initialName);
     await testController.click('#edit-store-submit input.btn.btn-primary');
     await testController.click(Selector('.swal-button--confirm'));
   }
+
 }
 
 export const editStorePage = new EditStorePage();

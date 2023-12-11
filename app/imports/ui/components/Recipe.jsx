@@ -6,17 +6,16 @@ import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 import RecipeModal from './RecipeModal';
-import {Recipes} from "../../api/recipe/Recipes";
+import { Recipes } from '../../api/recipe/Recipes';
 
 const RecipeCard = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
- function deleteRecipe(id)
-    {
-        Recipes.collection.remove(id);
-    }
+  // function deleteRecipe(id) {
+  //   Recipes.collection.remove(id);
+  // }
 
   const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
@@ -31,7 +30,7 @@ const RecipeCard = ({ recipe }) => {
           </Link>
           <br />
           <br />
-          <Button id="delete-recipe" variant="danger" onClick={() => {Recipes.collection.remove(recipe._id)}}>Delete</Button>
+          <Button id="delete-recipe" variant="danger" onClick={() => { Recipes.collection.remove(recipe._id); }}>Delete</Button>
         </div>
       );
     }
@@ -43,7 +42,7 @@ const RecipeCard = ({ recipe }) => {
           </Link>
           <br />
           <br />
-          <Button id="delete-recipe" variant="danger" onClick={() => {Recipes.collection.remove(recipe._id)}}>Delete</Button>
+          <Button id="delete-recipe" variant="danger" onClick={() => { Recipes.collection.remove(recipe._id); }}>Delete</Button>
           <br />
           <br />
           <strong>Owned by {recipe.owner}</strong>

@@ -14,11 +14,23 @@ class EditRecipePage {
 
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
   async editRecipe(testController) {
+    // Capture the initial recipe name
+    const initialName = await Selector('#edit-recipe-name').value;
+
     // Data for form
-    const name = `new-recipe-name-${new Date().getTime()}`;
+    const newName = `new-recipe-name-${new Date().getTime()}`;
 
-    await testController.typeText('#edit-recipe-name', name);
+    // Change the recipe name
+    await testController.click('#edit-recipe-name');
+    await testController.pressKey('ctrl+a delete');
+    await testController.typeText('#edit-recipe-name', newName);
+    await testController.click('#edit-recipe-submit input.btn.btn-primary');
+    await testController.click(Selector('.swal-button--confirm'));
 
+    // Restore the initial recipe name
+    await testController.click('#edit-recipe-name');
+    await testController.pressKey('ctrl+a delete');
+    await testController.typeText('#edit-recipe-name', initialName);
     await testController.click('#edit-recipe-submit input.btn.btn-primary');
     await testController.click(Selector('.swal-button--confirm'));
   }
