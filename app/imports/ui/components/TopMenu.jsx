@@ -5,6 +5,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import {Profiles} from "../../api/profiles/Profiles";
 
 const navContent = function (User) {
   let retVal;
@@ -50,11 +51,9 @@ const navContent = function (User) {
   return retVal;
 };
 const TopMenu = () => {
-
   const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
-
   return (
     <Navbar className="color5" expand="sm" id="basic-navbar-nav">
       <Container>
@@ -76,7 +75,7 @@ const TopMenu = () => {
             </NavDropdown>
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
-              <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to="/editProfile">
+              <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to={`/editProfile/${currentUser}`}>
                 <BoxArrowRight />
                 {' '}
                 Edit Profile
