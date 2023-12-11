@@ -42,35 +42,34 @@ const SignUp = ({ location }) => {
       } else {
         setError('');
         setRedirectToRef(true);
+      let firstName = doc.firstName;
+      let lastName = doc.lastName;
+      let address = doc.address;
+      let image = doc.image;
+      let description = doc.description;
+      let owner = doc.email;
+      Profiles.collection.insert(
+          {
+            firstName,
+            lastName,
+            address,
+            image,
+            description,
+            owner,
+          },
+          (error) => {
+            if (error) {
+              swal('Error', error.message, 'error');
+            } else {
+              swal('Success', 'Recipe added successfully', 'success');
+              formRef.reset();
+            }
+          },
+      );
       }
     });
-    let firstName = doc.firstName;
-    let lastName = doc.lastName;
-    let address = doc.address;
-    let image = doc.image;
-    let description = doc.description;
-    let owner = doc.email;
 
-    Profiles.collection.insert(
-        {
-          firstName,
-          lastName,
-          address,
-          image,
-          description,
-          owner,
-        },
-        (error) => {
-          if (error) {
-            swal('Error', error.message, 'error');
-          } else {
-            swal('Success', 'Recipe added successfully', 'success');
-            formRef.reset();
-          }
-        },
-    );
   };
-
   /* Display the signup form. Redirect to add page after successful registration and login. */
   const { from } = location?.state || { from: { pathname: '/home' } };
   // if correct authentication, redirect to from: page instead of signup screen
