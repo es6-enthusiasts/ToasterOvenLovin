@@ -23,7 +23,7 @@
     { "storeName": "Makiki Farmer's Market", "image": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t1.6435-9/162079472_201745871744720_9126292020055857828_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=be3454&_nc_ohc=5-mGCDzGkrYAX_8909y&_nc_ht=scontent.fhnl3-2.fna&oh=00_AfAnQTwb3r1rYh6tJne9bM6RZj_VXu1gbkcIJjiaaMn_Mg&oe=657D419C", "location": "1515 Wilder Ave, Honolulu, HI 96822", "storeHours": "Th F | 4:30 - 7:30 PM", "owner": "vendor@foo.com", "ingredients": "lettuce, cabbage, broccoli, pumpkin, cucumber, zucchini, potato, yam, onion, garlic" },
     { "storeName": "The Market", "image": "https://content-service.sodexomyway.com/media/The%20Market%20Hero_tcm247-130737_w1920_h976.jpg?url=https://uhm.sodexomyway.com/", "location": "2585 Dole St, Honolulu, HI 96822", "storeHours": "M T W Th F | 3:00 - 11:00 PM", "owner": "vendor@foo.com", "ingredients": "chocolate, soda, potato chips, nuts, apple, banana, jello" },
     { "storeName": "Nijiya Market University Store", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/2023_Nijiya_Market_University_Store.jpg/2560px-2023_Nijiya_Market_University_Store.jpg", "location": "1009 University Ave #101, Honolulu, HI 96826", "storeHours": "M T W Th F | 9:00 AM - 9:00 PM", "owner": "vendor@foo.com", "ingredients": "shiitake mushrooms, dried bonito flakes, sesame dressing, organic rice, cup noodle, kombu" },
-    { "storeName": "Down To Earth Organic & Natural Honolulu", "image": "https://www.downtoearth.org/sites/default/files/styles/max_800x800/public/images/stores/slides/Honolulu1_0.jpg?itok=rk_2otVd", "location": "1009 University Ave #101, Honolulu, HI 96826", "storeHours": "M T W Th F | 6:00 AM - 10:00 PM", "owner": "vendor@foo.com", "ingredients": "mango chunks, soymilk, squash, gluten free bread, vegetable broth, cereal, rolled oats" }
+    { "storeName": "Down To Earth Organic & Natural Honolulu", "image": "https://www.downtoearth.org/sites/default/files/styles/max_800x800/public/images/stores/slides/Honolulu1_0.jpg?itok=rk_2otVd", "location": "2525 S King St, Honolulu, HI 96826", "storeHours": "M T W Th F | 6:00 AM - 10:00 PM", "owner": "vendor@foo.com", "ingredients": "mango chunks, soymilk, squash, gluten free bread, vegetable broth, cereal, rolled oats" }
   ],
 
   "defaultRecipes": [
@@ -712,9 +712,9 @@
     {
       "firstName": "Janel",
       "lastName": "Joson",
-      "address": "1234 candyCane Lane",
+      "address": "Honolulu, HI",
       "image": "https://github.com/janeljo.png",
-      "description": "an adept leader who succeeds everywhere all the time.",
+      "description": "Computer science major. Avid baker.",
       "owner" : "janel@collegecuisineconnect.site"
     },
     {

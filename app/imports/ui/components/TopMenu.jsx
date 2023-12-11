@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, PersonCircle } from 'react-bootstrap-icons';
 // import { Profiles } from '../../api/profiles/Profiles';
 
 const navContent = function (User) {
@@ -76,7 +76,7 @@ const TopMenu = () => {
           ) : (
             <NavDropdown id="navbar-current-user" title={currentUser}>
               <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to={`/editProfile/${currentUser}`}>
-                <BoxArrowRight />
+                <PersonCircle />
                 {' '}
                 Edit Profile
               </NavDropdown.Item>
