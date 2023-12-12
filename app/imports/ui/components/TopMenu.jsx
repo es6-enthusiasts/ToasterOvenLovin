@@ -7,14 +7,15 @@ import { NavLink } from 'react-router-dom';
 import { BoxArrowRight, PersonFill, PersonPlusFill, PersonCircle } from 'react-bootstrap-icons';
 // import { Profiles } from '../../api/profiles/Profiles';
 
-const navContent = function (User) {
+const navContent = function () {
   let retVal;
-  if (User === '') {
+  if (Roles.userIsInRole(Meteor.userId(), 'student')) {
     retVal = (
       <Nav className="mx-auto pt-auto">
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
+        <Nav.Link id="cookbook-nav" href="/Cookbook">My Cookbook</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
@@ -43,7 +44,6 @@ const navContent = function (User) {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link id="recipe-nav" href="/listRecipes">Recipes</Nav.Link>
         <Nav.Link id="vendor-nav" href="/listVendors">Vendors</Nav.Link>
-        <Nav.Link id="cookbook-nav" href="/Cookbook">My Cookbook</Nav.Link>
         <Nav.Link id="community-nav" href="/community">Community</Nav.Link>
       </Nav>
     );
